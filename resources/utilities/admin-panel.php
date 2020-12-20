@@ -5,9 +5,9 @@ if( function_exists('acf_add_options_page') ) {
 
     // add parent
     $parent = acf_add_options_page(array(
-        'page_title' 	=> 'Modern',
-        'menu_title' 	=> 'Modern',
-        'menu_slug' 	=> 'modern',
+        'page_title' 	=> 'SecondMoove',
+        'menu_title' 	=> 'SecondMoove',
+        'menu_slug' 	=> 'secondmoove',
         'icon_url'    => 'dashicons-admin-generic',
         'position'    => 4,
         'redirect' 		=> true
