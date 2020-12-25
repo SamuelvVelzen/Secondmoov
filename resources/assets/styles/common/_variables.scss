@@ -2,9 +2,18 @@
 @import "~bootstrap/scss/functions";
 
 $theme-colors: (
-  primary: #525ddc
+		primary: #04A1A4,
+		secondary: #FFC001,
+		tertiary: #EF3078,
+		white: #ffffff,
+		dark: #414141,
+		light: #FEFEFC
 );
 
 /** Bootstrap navbar fix (https://git.io/fADqW) */
 $navbar-dark-toggler-icon-bg: none;
 $navbar-light-toggler-icon-bg: none;
+
+$default_spacing: 20px;
+
+$fonts: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
