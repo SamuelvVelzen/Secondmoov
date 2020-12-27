@@ -1,7 +1,22 @@
 <footer id="footer" class="container">
-	<div class="slideshow">
+	@if (get_field('partners','option'))
+		<div id="partnerCarousel" class="carousel slide w-100 slideshow" data-ride="carousel">
+			<div class="carousel-inner w-100" role="listbox">
+				@php($images = get_field('partners', 'option'))
+				@php($count = 0)
+				@foreach($images as $image)
+					@php($count++)
+					@if ($count <= 6)
+						<div class="carousel-item {{$count == 1 ? 'active' : null}}">
+							<img class="partner d-block col-3 img-fluid" src="{{$image['url']}}"
+							     alt="{{$image['alt']}}">
+						</div>
+					@endif
+				@endforeach
+			</div>
+		</div>
+	@endif
 
-	</div>
 	<div class="info row">
 		<div class=" col-12 col-sm-6 col-md-4 row">
 			@if (have_rows('service','option'))
