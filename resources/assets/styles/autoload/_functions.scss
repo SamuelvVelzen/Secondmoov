@@ -21,3 +21,8 @@
 		@content;
 	}
 }
+
+@mixin half-opacity($color) {
+	border-color: $color; /* The Fallback */
+	border-color: rgba($color, 0.5);
+}
