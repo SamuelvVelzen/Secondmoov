@@ -63,7 +63,12 @@
 						<div class="contact_container">
 							<a class="contact_container_link"
 							   href="{{get_sub_field('type') =="E-mail" ? "mailto" : "tel"}}:{{the_sub_field('info')}}">
-								<img class="contact_container_img" src="{{the_sub_field('image')}}" alt="">
+								@if(get_sub_field('type') == 'E-mail')
+									<img class="contact_container_img email" src="@asset('images/mail.png')" alt="">
+								@else
+									<img class="contact_container_img phone" src="@asset('images/phone.png')" alt="">
+								@endif
+
 								<p>{{the_sub_field('info')}}</p>
 							</a>
 						</div>
