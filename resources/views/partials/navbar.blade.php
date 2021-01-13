@@ -19,7 +19,7 @@
 	</div>
 </div>
 
-<header id="navbar-lower">
+<header id="navbar-lower" class="zindex-sticky">
 	<nav class="container navbar_container">
 		<ul class="navbar_group pl-0 d-flex list-unstyled mb-0 col-12 align-items-center">
 			@while(have_rows('menu','option'))

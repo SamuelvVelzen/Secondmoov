@@ -1,20 +1,12 @@
 <footer id="footer">
 	@if (get_field('partners','option'))
-		<div class="container-fluid carousel">
-			<div class="container">
-				<div id="partnerCarousel">
-					@php($images = get_field('partners', 'option'))
-					@php($count = 0)
-					@foreach($images as $image)
-						<img class="" src="{{$image['url']}}"
-						     alt="{{$image['alt']}}">
-						<img class="" src="{{$image['url']}}"
-						     alt="{{$image['alt']}}">
-						<img class="" src="{{$image['url']}}"
-						     alt="{{$image['alt']}}">
-					@endforeach
-				</div>
-			</div>
+		<div id="partnerCarousel" class="d-flex align-items-center">
+			@php($images = get_field('partners', 'option'))
+			@php($count = 0)
+			@foreach($images as $image)
+				<img class="" src="{{$image['url']}}"
+				     alt="{{$image['alt']}}">
+			@endforeach
 		</div>
 	@endif
 

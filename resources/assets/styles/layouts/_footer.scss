@@ -1,20 +1,18 @@
 #footer {
-	flex-shrink: 0;
+	margin-top: $default_spacing4;
 
-	.carousel {
+	#partnerCarousel {
+		padding: 0 $default_spacing $default_spacing $default_spacing;
 		border-bottom: 1px solid;
 		@include half-opacity($dark);
 
-		#partnerCarousel {
-			padding-bottom: $default_spacing2;
-			display: flex;
-			align-items: center;
-
-			img {
-				height: 100%;
-			}
+		img {
+			height: 100px;
+			object-position: center;
+			object-fit: contain;
 		}
 	}
+
 
 	.info {
 		margin-top: $default_spacing;
