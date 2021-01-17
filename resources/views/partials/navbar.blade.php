@@ -25,14 +25,11 @@
 			@while(have_rows('menu','option'))
 				@php(the_row())
 				@php($pageID = get_sub_field('link', false, false))
-				@php($count++)
-				@if($count <= 6)
-					<li class="navbar_group_item">
-						<a class="navbar_group_item_link" href="{{get_the_permalink($pageID)}}">
-							{{get_the_title($pageID)}}
-						</a>
-					</li>
-				@endif
+				<li class="navbar_group_item">
+					<a class="navbar_group_item_link" href="{{get_the_permalink($pageID)}}">
+						{{get_the_title($pageID)}}
+					</a>
+				</li>
 			@endwhile
 			@if(get_field('cta','option'))
 				@php($cta = get_field('cta', 'option'))
