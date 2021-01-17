@@ -1,13 +1,13 @@
 <div id="navbar-upper">
 	<div class="container d-flex align-items-center">
 		<a class="nav_brand" href="{{ home_url('/') }}">
-			<img class="nav_brand_logo" src="@asset('images/logo.png')">
+			<img class="nav_brand_logo square" src="@asset('images/logo.png')">
 		</a>
 		@while(have_rows('contact','option')) @php(the_row())
 		@php($pageID = get_sub_field('url', false, false))
 		@if(get_sub_field('type') != "E-mail")
 			<div class="ml-auto contact_container d-flex align-items-center">
-				<img class="contact_container_logo" src="@asset('images/phone.png')">
+				<img class="contact_container_logo square" src="@asset('images/phone.png')">
 				<a class="contact_container_link d-flex flex-column"
 				   href="{{get_sub_field('type') =="E-mail" ? "mailto" : "tel"}}:{{the_sub_field('info')}}">
 					<p>Heb je een vraag?</p>
