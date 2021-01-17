@@ -26,6 +26,10 @@ main {
 	margin: $default-spacing2 0;
 }
 
+.subtitle {
+	margin: $default-spacing 0;
+}
+
 .background {
 	position: absolute;
 	height: 326px;
@@ -39,6 +43,10 @@ main {
 
 	@include breakpoint-md {
 		height: 250px;
+	}
+
+	&.small {
+		height: 150px;
 	}
 }
 
@@ -57,5 +65,13 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p {
 }
 
 img:not(.square) {
-	border-radius: 15px;
+	border-radius: $radius;
+}
+
+.squircles {
+	border-radius: $radius;
+}
+
+.content_top {
+	margin-top: $default_spacing2;
 }
