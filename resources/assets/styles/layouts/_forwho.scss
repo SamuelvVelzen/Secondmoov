@@ -1,0 +1,16 @@
+.forwho-contents {
+	.content {
+		.introduction {
+			margin: $default_spacing 0;
+		}
+	}
+
+	.image {
+		margin-top: $default_spacing;
+
+		img {
+			position: sticky;
+			top: 96px;
+		}
+	}
+}
