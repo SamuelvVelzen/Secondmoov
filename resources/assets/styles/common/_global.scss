@@ -46,7 +46,15 @@ main {
 	}
 
 	&.small {
-		height: 150px;
+		height: 200px;
+
+		@include breakpoint-lg {
+			height: 280px;
+		}
+
+		@include breakpoint-md {
+			height: 200px;
+		}
 	}
 }
 
