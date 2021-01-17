@@ -4,7 +4,7 @@
 			@php($images = get_field('partners', 'option'))
 			@php($count = 0)
 			@foreach($images as $image)
-				<img class="" src="{{$image['url']}}"
+				<img class="square" src="{{$image['url']}}"
 				     alt="{{$image['alt']}}">
 			@endforeach
 		</div>
@@ -56,9 +56,11 @@
 							<a class="contact_container_link"
 							   href="{{get_sub_field('type') =="E-mail" ? "mailto" : "tel"}}:{{the_sub_field('info')}}">
 								@if(get_sub_field('type') == 'E-mail')
-									<img class="contact_container_img email" src="@asset('images/mail.png')" alt="">
+									<img class="contact_container_img email square" src="@asset('images/mail.png')"
+									     alt="">
 								@else
-									<img class="contact_container_img phone" src="@asset('images/phone.png')" alt="">
+									<img class="contact_container_img phone square" src="@asset('images/phone.png')"
+									     alt="">
 								@endif
 
 								<p>{{the_sub_field('info')}}</p>
