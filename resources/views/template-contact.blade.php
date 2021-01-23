@@ -18,7 +18,7 @@
 					<div class="d-flex align-items-center info_container">
 						@if($info['type'] === "Whatsapp")
 							<img class="square" src="@asset('images/mail.png')" alt="">
-						@elseif($info['type'] === "Mail")
+						@elseif($info['type'] === "Email")
 							<img class="square" src="@asset('images/mail.png')" alt="">
 						@elseif($info['type'] === "Telefoonnummer")
 							<img class="square" src="@asset('images/phone.png')" alt="">
