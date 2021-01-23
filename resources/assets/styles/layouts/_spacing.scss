@@ -1,0 +1,203 @@
+.m {
+	&-default {
+		margin: $default_spacing;
+
+		&-2 {
+			margin: $default_spacing2;
+
+			@include breakpoint-md {
+				margin: $default_spacing;
+			}
+		}
+
+		&-4 {
+			margin: $default_spacing4;
+
+			@include breakpoint-md {
+				margin: $default_spacing2;
+			}
+		}
+	}
+
+	&t-default {
+		margin-top: $default_spacing;
+
+		&-2 {
+			margin-top: $default_spacing2;
+
+			@include breakpoint-md {
+				margin-top: $default_spacing;
+			}
+		}
+
+		&-4 {
+			margin-top: $default_spacing4;
+
+			@include breakpoint-md {
+				margin-top: $default_spacing2;
+			}
+		}
+	}
+
+	&b-default {
+		margin-bottom: $default_spacing;
+
+		&-2 {
+			margin-bottom: $default_spacing2;
+
+			@include breakpoint-md {
+				margin-bottom: $default_spacing;
+			}
+		}
+
+		&-4 {
+			margin-bottom: $default_spacing4;
+
+			@include breakpoint-md {
+				margin-bottom: $default_spacing2;
+			}
+		}
+	}
+
+	&l-default {
+		margin-left: $default_spacing;
+
+		&-2 {
+			margin-left: $default_spacing2;
+
+			@include breakpoint-md {
+				margin-left: $default_spacing;
+			}
+		}
+
+		&-4 {
+			margin-left: $default_spacing4;
+
+			@include breakpoint-md {
+				margin-left: $default_spacing2;
+			}
+		}
+	}
+
+	&r-default {
+		margin-right: $default_spacing;
+
+		&-2 {
+			margin-right: $default_spacing2;
+
+			@include breakpoint-md {
+				margin-right: $default_spacing;
+			}
+		}
+
+		&-4 {
+			margin-right: $default_spacing4;
+
+			@include breakpoint-md {
+				margin-right: $default_spacing2;
+			}
+		}
+	}
+}
+
+.p {
+	&-default {
+		padding: $default_spacing;
+
+		&-2 {
+			padding: $default_spacing2;
+
+			@include breakpoint-md {
+				padding: $default_spacing;
+			}
+		}
+
+		&-4 {
+			padding: $default_spacing4;
+
+			@include breakpoint-md {
+				padding: $default_spacing2;
+			}
+		}
+	}
+
+	&t-default {
+		padding-top: $default_spacing;
+
+		&-2 {
+			padding-top: $default_spacing2;
+
+			@include breakpoint-md {
+				padding-top: $default_spacing;
+			}
+		}
+
+		&-4 {
+			padding-top: $default_spacing4;
+
+			@include breakpoint-md {
+				padding-top: $default_spacing2;
+			}
+		}
+	}
+
+	&b-default {
+		padding-bottom: $default_spacing;
+
+		&-2 {
+			padding-bottom: $default_spacing2;
+
+			@include breakpoint-md {
+				padding-bottom: $default_spacing;
+			}
+		}
+
+		&-4 {
+			padding-bottom: $default_spacing4;
+
+			@include breakpoint-md {
+				padding-bottom: $default_spacing2;
+			}
+		}
+	}
+
+	&l-default {
+		padding-left: $default_spacing;
+
+		&-2 {
+			padding-left: $default_spacing2;
+
+			@include breakpoint-md {
+				padding-left: $default_spacing;
+			}
+		}
+
+		&-4 {
+			padding-left: $default_spacing4;
+
+			@include breakpoint-md {
+				padding-left: $default_spacing2;
+			}
+		}
+	}
+
+	&r-default {
+		padding-right: $default_spacing;
+
+		&-2 {
+			padding-right: $default_spacing2;
+
+			@include breakpoint-md {
+				padding-right: $default_spacing;
+			}
+		}
+
+		&-4 {
+			padding-right: $default_spacing4;
+
+			@include breakpoint-md {
+				padding-right: $default_spacing2;
+			}
+		}
+	}
+}

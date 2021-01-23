@@ -1,13 +1,20 @@
 /** Import Bootstrap functions */
 @import "~bootstrap/scss/functions";
 
+$primary: #04A1A4;
+$secondary: #FFC001;
+$tertiary: #EF3078;
+$white: #ffffff;
+$dark: #414141;
+$light: #FEFEFC;
+
 $theme-colors: (
-		primary: #04A1A4,
-		secondary: #FFC001,
-		tertiary: #EF3078,
-		white: #ffffff,
-		dark: #414141,
-		light: #FEFEFC
+		primary: $primary,
+		secondary: $secondary,
+		tertiary: $tertiary,
+		white: $white,
+		dark: $dark,
+		light: $light,
 );
 
 /** Bootstrap navbar fix (https://git.io/fADqW) */

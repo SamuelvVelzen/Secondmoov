@@ -24,10 +24,26 @@ main {
 
 .title {
 	margin: $default-spacing2 0;
+
+	@include breakpoint-md {
+		margin: $default-spacing 0;
+	}
 }
 
 .subtitle {
 	margin: $default-spacing 0;
+}
+
+.container.special {
+	@include breakpoint-md-big {
+		max-width: 770px;
+	}
+	@include breakpoint-lg-big {
+		max-width: 1110px;
+	}
+	@include breakpoint-xl-big {
+		max-width: 1240px;
+	}
 }
 
 .background {
@@ -43,6 +59,18 @@ main {
 
 	@include breakpoint-md {
 		height: 250px;
+	}
+
+	&.medium {
+		height: 250px;
+
+		@include breakpoint-lg {
+			height: 225px;
+		}
+
+		@include breakpoint-md {
+			height: 175px;
+		}
 	}
 
 	&.small {
