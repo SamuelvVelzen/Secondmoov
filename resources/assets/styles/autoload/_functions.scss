@@ -22,6 +22,30 @@
 	}
 }
 
+@mixin breakpoint-sm-big {
+	@media only screen and (min-width: 577px) {
+		@content;
+	}
+}
+
+@mixin breakpoint-md-big {
+	@media only screen and (min-width: 769px) {
+		@content;
+	}
+}
+
+@mixin breakpoint-lg-big {
+	@media only screen and (min-width: 993px) {
+		@content;
+	}
+}
+
+@mixin breakpoint-xl-big {
+	@media only screen and (min-width: 1201px) {
+		@content;
+	}
+}
+
 @mixin half-opacity($color) {
 	border-color: $color; /* The Fallback */
 	border-color: rgba($color, 0.5);

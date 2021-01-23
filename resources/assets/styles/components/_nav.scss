@@ -1,0 +1,30 @@
+.tns-nav-circles {
+	left: 50%;
+	transform: translateX(-50%);
+	right: unset;
+	bottom: 10%;
+	display: flex;
+
+	@include breakpoint-sm {
+		bottom: 3%;
+	}
+
+	span {
+		display: block;
+		height: 15px;
+		width: 15px;
+		background-color: $white;
+		border-radius: 50%;
+		border: 1px solid $dark;
+		outline: none;
+		margin-right: 10px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&.tns-nav-active {
+			background-color: $dark;
+		}
+	}
+}

@@ -37,5 +37,34 @@ export default {
                 },
             });
         }
+
+        if (document.getElementById('memberCarousel')) {
+            tns({
+                container: '#memberCarousel',
+                items: 3,
+                slideBy: 'page',
+                nav: true,
+                navContainer: '#customize-nav',
+                controls: false,
+                arrowKeys: false,
+                autoplay: true,
+                autoplayButtonOutput: false,
+                mouseDrag: true,
+                gutter: 20,
+                lazyload: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                    },
+                    576: {
+                        items: 2,
+                    },
+                    992: {
+                        items: 3,
+                        gutter: 40,
+                    },
+                },
+            });
+        }
     },
 };
