@@ -1,0 +1,25 @@
+.icon-img {
+	span {
+		width: 150px;
+		height: 150px;
+
+		img {
+			width: 125px;
+			height: 125px;
+		}
+	}
+}
+
+.service {
+	&_text {
+		@include breakpoint-md {
+			order: 2;
+		}
+	}
+
+	&_image {
+		@include breakpoint-md {
+			order: 1;
+		}
+	}
+}
