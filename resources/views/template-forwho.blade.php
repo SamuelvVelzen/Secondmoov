@@ -20,9 +20,9 @@
 			</div>
 		</div>
 	@endif
-	<div class="container">
-		@php($forwhos = get_field('for_who'))
-		@if($forwhos)
+	@php($forwhos = get_field('for_who'))
+	@if($forwhos)
+		<div class="container">
 			@foreach($forwhos as $forwho)
 				<div class="row forwho-contents {{$loop->index % 2 == 1 ?'flex-row-reverse':''}}">
 					<div class="col-12">
@@ -42,6 +42,6 @@
 					</div>
 				</div>
 			@endforeach
-		@endif
-	</div>
+		</div>
+	@endif
 @endsection
