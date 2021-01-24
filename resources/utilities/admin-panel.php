@@ -65,3 +65,20 @@
 			remove_menu_page('edit.php?post_type=acf-field-group');
 		}
 	}, PHP_INT_MAX);
+
+	function visual_remove_default_template()
+	{
+		global $pagenow;
+		if (in_array($pagenow, array('post-new.php', 'post.php')) && get_post_type() == 'page') { ?>
+			<script>
+                (function ($) {
+                    $(document).ready(function () {
+                        $('#page_template option[value="default"]').remove();
+                    })
+                })(jQuery)
+			</script>
+			<?php
+		}
+	}
+
+	add_action('admin_footer', 'visual_remove_default_template', 10);
