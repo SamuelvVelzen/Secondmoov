@@ -44,7 +44,7 @@
 			max-width: 80%;
 			width: 80%;
 			padding: $default_spacing;
-			border-radius: 0 15px 15px 15px;
+			border-radius: 0 $squircle $squircle $squircle $squircle;
 			bottom: -30%;
 
 			.title {

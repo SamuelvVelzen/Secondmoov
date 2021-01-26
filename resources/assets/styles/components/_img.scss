@@ -8,6 +8,8 @@
 		border-radius: 100%;
 		object-fit: cover;
 		object-position: center;
+		height: calc(100% - 25px);
+		width: calc(100% - 25px)
 	}
 
 	&.border-primary:before {
