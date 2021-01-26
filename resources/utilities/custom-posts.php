@@ -17,6 +17,21 @@
 
 			)
 		);
+
+		register_post_type('forwho',
+			// CPT Options
+			array(
+				'labels' => array(
+					'name' => __("Voor wie's"),
+					'singular_name' => __('Voor wie')
+				),
+				'public' => true,
+				'has_archive' => true,
+				'rewrite' => array('slug' => 'forwhos'),
+				'show_in_rest' => true,
+
+			)
+		);
 	}
 
 // Hooking up our function to theme setup
