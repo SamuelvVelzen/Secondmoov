@@ -1,220 +1,220 @@
 .m {
 	&-default {
-		margin: $default_spacing;
+		margin: $default_spacing !important;
 
 		&-sm {
 			@include breakpoint-sm-big {
-				margin: 0;
+				margin: 0 !important;
 			}
 		}
 
 		&-md {
 			@include breakpoint-md-big {
-				margin: 0;
+				margin: 0 !important;
 			}
 		}
 
 		&-lg {
 			@include breakpoint-lg-big {
-				margin: 0;
+				margin: 0 !important;
 			}
 		}
 
 		&-xl {
 			@include breakpoint-xl-big {
-				margin: 0;
+				margin: 0 !important;
 			}
 		}
 
 		&-2 {
-			margin: $default_spacing2;
+			margin: $default_spacing2 !important;
 
 			@include breakpoint-md {
-				margin: $default_spacing;
+				margin: $default_spacing !important;
 			}
 		}
 
 		&-4 {
-			margin: $default_spacing4;
+			margin: $default_spacing4 !important;
 
 			@include breakpoint-md {
-				margin: $default_spacing2;
+				margin: $default_spacing2 !important;
 			}
 		}
 	}
 
 	&t-default {
-		margin-top: $default_spacing;
+		margin-top: $default_spacing !important;
 
 		&-sm {
 			@include breakpoint-sm-big {
-				margin-top: 0;
+				margin-top: 0 !important;
 			}
 		}
 
 		&-md {
 			@include breakpoint-md-big {
-				margin-top: 0;
+				margin-top: 0 !important;
 			}
 		}
 
 		&-lg {
 			@include breakpoint-lg-big {
-				margin-top: 0;
+				margin-top: 0 !important;
 			}
 		}
 
 		&-xl {
 			@include breakpoint-xl-big {
-				margin-top: 0;
+				margin-top: 0 !important;
 			}
 		}
 
 		&-2 {
-			margin-top: $default_spacing2;
+			margin-top: $default_spacing2 !important;
 
 			@include breakpoint-md {
-				margin-top: $default_spacing;
+				margin-top: $default_spacing !important;
 			}
 		}
 
 		&-4 {
-			margin-top: $default_spacing4;
+			margin-top: $default_spacing4 !important;
 
 			@include breakpoint-md {
-				margin-top: $default_spacing2;
+				margin-top: $default_spacing2 !important;
 			}
 		}
 	}
 
 	&b-default {
-		margin-bottom: $default_spacing;
+		margin-bottom: $default_spacing !important;
 
 		&-sm {
 			@include breakpoint-sm-big {
-				margin-bottom: 0;
+				margin-bottom: 0 !important;
 			}
 		}
 
 		&-md {
 			@include breakpoint-md-big {
-				margin-bottom: 0;
+				margin-bottom: 0 !important;
 			}
 		}
 
 		&-lg {
 			@include breakpoint-lg-big {
-				margin-bottom: 0;
+				margin-bottom: 0 !important;
 			}
 		}
 
 		&-xl {
 			@include breakpoint-xl-big {
-				margin-bottom: 0;
+				margin-bottom: 0 !important;
 			}
 		}
 
 		&-2 {
-			margin-bottom: $default_spacing2;
+			margin-bottom: $default_spacing2 !important;
 
 			@include breakpoint-md {
-				margin-bottom: $default_spacing;
+				margin-bottom: $default_spacing !important;
 			}
 		}
 
 		&-4 {
-			margin-bottom: $default_spacing4;
+			margin-bottom: $default_spacing4 !important;
 
 			@include breakpoint-md {
-				margin-bottom: $default_spacing2;
+				margin-bottom: $default_spacing2 !important;
 			}
 		}
 	}
 
 	&l-default {
-		margin-left: $default_spacing;
+		margin-left: $default_spacing !important;
 
 		&-sm {
 			@include breakpoint-sm-big {
-				margin-left: 0;
+				margin-left: 0 !important;
 			}
 		}
 
 		&-md {
 			@include breakpoint-md-big {
-				margin-left: 0;
+				margin-left: 0 !important;
 			}
 		}
 
 		&-lg {
 			@include breakpoint-lg-big {
-				margin-left: 0;
+				margin-left: 0 !important;
 			}
 		}
 
 		&-xl {
 			@include breakpoint-xl-big {
-				margin-left: 0;
+				margin-left: 0 !important;
 			}
 		}
 
 		&-2 {
-			margin-left: $default_spacing2;
+			margin-left: $default_spacing2 !important;
 
 			@include breakpoint-md {
-				margin-left: $default_spacing;
+				margin-left: $default_spacing !important;
 			}
 		}
 
 		&-4 {
-			margin-left: $default_spacing4;
+			margin-left: $default_spacing4 !important;
 
 			@include breakpoint-md {
-				margin-left: $default_spacing2;
+				margin-left: $default_spacing2 !important;
 			}
 		}
 	}
 
 	&r-default {
-		margin-right: $default_spacing;
+		margin-right: $default_spacing !important;
 
 		&-sm {
 			@include breakpoint-sm-big {
-				margin-right: 0;
+				margin-right: 0 !important;
 			}
 		}
 
 		&-md {
 			@include breakpoint-md-big {
-				margin-right: 0;
+				margin-right: 0 !important;
 			}
 		}
 
 		&-lg {
 			@include breakpoint-lg-big {
-				margin-right: 0;
+				margin-right: 0 !important;
 			}
 		}
 
 		&-xl {
 			@include breakpoint-xl-big {
-				margin-right: 0;
+				margin-right: 0 !important;
 			}
 		}
 
 		&-2 {
-			margin-right: $default_spacing2;
+			margin-right: $default_spacing2 !important;
 
 			@include breakpoint-md {
-				margin-right: $default_spacing;
+				margin-right: $default_spacing !important;
 			}
 		}
 
 		&-4 {
-			margin-right: $default_spacing4;
+			margin-right: $default_spacing4 !important;
 
 			@include breakpoint-md {
-				margin-right: $default_spacing2;
+				margin-right: $default_spacing2 !important;
 			}
 		}
 	}
@@ -222,221 +222,221 @@
 
 .p {
 	&-default {
-		padding: $default_spacing;
+		padding: $default_spacing !important;
 
 		&-sm {
 			@include breakpoint-sm-big {
-				padding: 0;
+				padding: 0 !important;
 			}
 		}
 
 		&-md {
 			@include breakpoint-md-big {
-				padding: 0;
+				padding: 0 !important;
 			}
 		}
 
 		&-lg {
 			@include breakpoint-lg-big {
-				padding: 0;
+				padding: 0 !important;
 			}
 		}
 
 		&-xl {
 			@include breakpoint-xl-big {
-				padding: 0;
+				padding: 0 !important;
 			}
 		}
 
 		&-2 {
-			padding: $default_spacing2;
+			padding: $default_spacing2 !important;
 
 			@include breakpoint-md {
-				padding: $default_spacing;
+				padding: $default_spacing !important;
 			}
 		}
 
 		&-4 {
-			padding: $default_spacing4;
+			padding: $default_spacing4 !important;
 
 			@include breakpoint-md {
-				padding: $default_spacing2;
+				padding: $default_spacing2 !important;
 			}
 		}
 	}
 
 	&t-default {
-		padding-top: $default_spacing;
+		padding-top: $default_spacing !important;
 
 		&-sm {
 			@include breakpoint-sm-big {
-				padding-top: 0;
+				padding-top: 0 !important;
 			}
 		}
 
 		&-md {
 			@include breakpoint-md-big {
-				padding-top: 0;
+				padding-top: 0 !important;
 			}
 		}
 
 		&-lg {
 			@include breakpoint-lg-big {
-				padding-top: 0;
+				padding-top: 0 !important;
 			}
 		}
 
 		&-xl {
 			@include breakpoint-xl-big {
-				padding-top: 0;
+				padding-top: 0 !important;
 			}
 		}
 
 		&-2 {
-			padding-top: $default_spacing2;
+			padding-top: $default_spacing2 !important;
 
 			@include breakpoint-md {
-				padding-top: $default_spacing;
+				padding-top: $default_spacing !important;
 			}
 		}
 
 		&-4 {
-			padding-top: $default_spacing4;
+			padding-top: $default_spacing4 !important;
 
 			@include breakpoint-md {
-				padding-top: $default_spacing2;
+				padding-top: $default_spacing2 !important;
 			}
 		}
 	}
 
 	&b-default {
-		padding-bottom: $default_spacing;
+		padding-bottom: $default_spacing !important;
 
 		&-sm {
 			@include breakpoint-sm-big {
-				padding-bottom: 0;
+				padding-bottom: 0 !important;
 			}
 		}
 
 		&-md {
 			@include breakpoint-md-big {
-				padding-bottom: 0;
+				padding-bottom: 0 !important;
 			}
 		}
 
 		&-lg {
 			@include breakpoint-lg-big {
-				padding-bottom: 0;
+				padding-bottom: 0 !important;
 			}
 		}
 
 		&-xl {
 			@include breakpoint-xl-big {
-				padding-bottom: 0;
+				padding-bottom: 0 !important;
 			}
 		}
 
 		&-2 {
-			padding-bottom: $default_spacing2;
+			padding-bottom: $default_spacing2 !important;
 
 			@include breakpoint-md {
-				padding-bottom: $default_spacing;
+				padding-bottom: $default_spacing !important;
 			}
 		}
 
 		&-4 {
-			padding-bottom: $default_spacing4;
+			padding-bottom: $default_spacing4 !important;
 
 			@include breakpoint-md {
-				padding-bottom: $default_spacing2;
+				padding-bottom: $default_spacing2 !important;
 			}
 		}
 	}
 
 	&l-default {
-		padding-left: $default_spacing;
+		padding-left: $default_spacing !important;
 
 		&-sm {
 			@include breakpoint-sm-big {
-				padding-left: 0;
+				padding-left: 0 !important;
 			}
 		}
 
 		&-md {
 			@include breakpoint-md-big {
-				padding-left: 0;
+				padding-left: 0 !important;
 			}
 		}
 
 		&-lg {
 			@include breakpoint-lg-big {
-				padding-left: 0;
+				padding-left: 0 !important;
 			}
 		}
 
 		&-xl {
 			@include breakpoint-xl-big {
-				padding-left: 0;
+				padding-left: 0 !important;
 			}
 		}
 
 		&-2 {
-			padding-left: $default_spacing2;
+			padding-left: $default_spacing2 !important;
 
 			@include breakpoint-md {
-				padding-left: $default_spacing;
+				padding-left: $default_spacing !important;
 			}
 		}
 
 		&-4 {
-			padding-left: $default_spacing4;
+			padding-left: $default_spacing4 !important;
 
 			@include breakpoint-md {
-				padding-left: $default_spacing2;
+				padding-left: $default_spacing2 !important;
 			}
 		}
 	}
 
 	&r-default {
-		padding-right: $default_spacing;
+		padding-right: $default_spacing !important;
 
 		&-sm {
 			@include breakpoint-sm-big {
-				padding-right: 0;
+				padding-right: 0 !important;
 			}
 		}
 
 		&-md {
 			@include breakpoint-md-big {
-				padding-right: 0;
+				padding-right: 0 !important;
 			}
 		}
 
 		&-lg {
 			@include breakpoint-lg-big {
-				padding-right: 0;
+				padding-right: 0 !important;
 			}
 		}
 
 		&-xl {
 			@include breakpoint-xl-big {
-				padding-right: 0;
+				padding-right: 0 !important;
 			}
 		}
 
 		&-2 {
-			padding-right: $default_spacing2;
+			padding-right: $default_spacing2 !important;
 
 			@include breakpoint-md {
-				padding-right: $default_spacing;
+				padding-right: $default_spacing !important;
 			}
 		}
 
 		&-4 {
-			padding-right: $default_spacing4;
+			padding-right: $default_spacing4 !important;
 
 			@include breakpoint-md {
-				padding-right: $default_spacing2;
+				padding-right: $default_spacing2 !important;
 			}
 		}
 	}
@@ -445,18 +445,18 @@
 .col-md-4 {
 	&-default {
 		@include breakpoint-md-big {
-			max-width: calc(33.33333% - #{$default_spacing});
+			max-width: calc(33.33333% - #{$default_spacing}) !important;
 		}
 
 		&-2 {
 			@include breakpoint-md-big {
-				max-width: calc(33.33333% - #{$default_spacing2});
+				max-width: calc(33.33333% - #{$default_spacing2}) !important;
 			}
 		}
 
 		&-4 {
 			@include breakpoint-md-big {
-				max-width: calc(33.33333% - #{$default_spacing4});
+				max-width: calc(33.33333% - #{$default_spacing4}) !important;
 			}
 		}
 	}
@@ -465,18 +465,18 @@
 .col-md-6 {
 	&-default {
 		@include breakpoint-md-big {
-			max-width: calc(50% - #{$default_spacing});
+			max-width: calc(50% - #{$default_spacing}) !important;
 		}
 
 		&-2 {
 			@include breakpoint-md-big {
-				max-width: calc(50% - #{$default_spacing2});
+				max-width: calc(50% - #{$default_spacing2}) !important;
 			}
 		}
 
 		&-4 {
 			@include breakpoint-md-big {
-				max-width: calc(50% - #{$default_spacing4});
+				max-width: calc(50% - #{$default_spacing4}) !important;
 			}
 		}
 	}
