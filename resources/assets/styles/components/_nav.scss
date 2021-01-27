@@ -5,6 +5,10 @@
 	bottom: 10%;
 	display: flex;
 
+	&.bottom {
+		bottom: 0;
+	}
+
 	@include breakpoint-sm {
 		bottom: 3%;
 	}
