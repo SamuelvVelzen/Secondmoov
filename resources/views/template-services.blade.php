@@ -31,7 +31,7 @@
 			@while($query->have_posts()) @php($query->the_post()) @php($i++)
 			<div class="row">
 				<div class="col-12">
-					<h2 class="title mb-0 col-12 col-md-6">{{the_title()}}</h2>
+					<h2 class="title mb-0 col-12 col-md-6 mb-default">{{the_title()}}</h2>
 				</div>
 			</div>
 			<div class="row {{$i % 2 == 1 ?'flex-row-reverse':''}}">
@@ -48,7 +48,7 @@
 							</span>
 				</div>
 			</div>
-			<div class="row mt-default-2">
+			<div class="row">
 				<div class="text text-content">
 					{!! the_field('text') !!}
 				</div>

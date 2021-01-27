@@ -26,7 +26,7 @@
 			<div class="background bg-tertiary pb-5 fixed-bottom"></div>
 			<div class="container position-relative">
 				<div class="row">
-					<h2 class="col-12 col-md-6">{{the_field('member_title')}}</h2>
+					<h2 class="col-12 col-md-6 mb-default">{{the_field('member_title')}}</h2>
 				</div>
 				<div id="memberCarousel" class="mb-default-4">
 					@foreach($members as $member)

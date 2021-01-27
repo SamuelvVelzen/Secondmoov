@@ -4,7 +4,7 @@
 		@include('partials.entry-meta')
 	</header>
 	<div class="container">
-		<h1 class="m-default mx-0">{!! get_the_title() !!}</h1>
+		<h1 class="m-default mx-0">{{ the_title() }}</h1>
 		<p class="font-weight-bold text-content mb-default">{{the_field('introduction')}}</p>
 	</div>
 	<div class="entry-content text-content">

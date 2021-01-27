@@ -30,7 +30,7 @@
 							</a>
 							<div class="content position-absolute">
 								<p class="date text-muted">{{ the_time('d F Y') }}</p>
-								<h2 class="title">{{the_title()}}</h2>
+								<h2 class="title">{{the_field('short_title')}}</h2>
 								<p class="text">{{the_field('introduction')}}</p>
 								<a href="{{the_permalink() }}" class="btn btn-primary">Lees meer...</a>
 							</div>
