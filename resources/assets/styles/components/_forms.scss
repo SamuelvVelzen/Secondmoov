@@ -1,19 +1,83 @@
 /** Search form */
 .search-form {
-  @extend .form-inline;
+	@extend .form-inline;
 }
 
 .search-form label {
-  @extend .form-group;
+	@extend .form-group;
 
-  font-weight: normal;
+	font-weight: normal;
 }
 
 .search-form .search-field {
-  @extend .form-control;
+	@extend .form-control;
 }
 
 .search-form .search-submit {
-  @extend .btn;
-  @extend .btn-secondary;
+	@extend .btn;
+	@extend .btn-secondary;
+}
+
+.form {
+	background-color: $white;
+	padding: $default_spacing $default_spacing2;
+	border-radius: $squircle;
+	box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+
+	.wpcf7-form {
+		.form-group {
+			margin-bottom: 0;
+
+			&.first {
+				select {
+					margin-top: $default_spacing;
+				}
+			}
+		}
+
+		input, textarea, select {
+			width: 100%;
+			margin-top: $default_spacing2;
+			padding: $default_spacing/2 $default_spacing;
+			border-radius: 5px;
+			outline: none;
+			border: 1px solid;
+			background-color: $white;
+
+			@include half-opacity($dark);
+
+			&:focus {
+				border-color: $dark;
+			}
+		}
+
+		select {
+			background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right;
+			-webkit-appearance: none;
+			background-position-x: 95%;
+		}
+
+		#formButtons {
+			@extend .d-flex;
+			@extend .flex-wrap;
+			@extend .flex-row-reverse;
+			margin-top: $default_spacing2;
+
+			input[type="submit"] {
+				margin: 0 0 0 $default_spacing/2;
+				width: auto;
+			}
+
+			.ajax-loader {
+				margin-top: 15px;
+			}
+
+			.wpcf7-validation-errors {
+				width: 100%;
+				margin: 0;
+				@extend .flex-row-reverse;
+				margin-top: $default_spacing;
+			}
+		}
+	}
 }

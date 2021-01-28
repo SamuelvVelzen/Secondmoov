@@ -1,0 +1,90 @@
+#footer {
+	margin-top: $default_spacing4;
+
+	#partnerCarousel {
+		padding: 0 $default_spacing $default_spacing $default_spacing;
+		border-bottom: 1px solid;
+		@include half-opacity($dark);
+
+		img {
+			height: 100px;
+			object-position: center;
+			object-fit: contain;
+		}
+	}
+
+
+	.info {
+		margin-top: $default_spacing;
+
+		.services {
+			margin-bottom: $default_spacing;
+
+			&_link {
+				color: $dark;
+				opacity: 0.5;
+
+				&:not(:last-child) {
+					margin-right: $default_spacing;
+				}
+			}
+		}
+
+		.socials {
+			align-self: end;
+			margin-top: auto;
+			margin-bottom: $default_spacing;
+
+			&_img {
+				width: 50px;
+				height: 50px;
+
+
+				margin-right: $default_spacing;
+			}
+		}
+	}
+
+	.logo_container {
+		margin-bottom: $default_spacing;
+
+		@include breakpoint-md {
+			order: -1;
+		}
+
+		.logo {
+			align-self: center;
+			justify-self: center;
+			max-height: 75px;
+			width: auto;
+		}
+	}
+
+	.contacts {
+		justify-self: end;
+		margin-bottom: $default_spacing;
+
+		.contact_container {
+			&:not(:last-child) {
+				margin-bottom: $default_spacing;
+			}
+
+			&_link {
+				display: flex;
+				align-items: center;
+				text-decoration: none;
+			}
+
+			&_img {
+				height: 25px;
+				width: 25px;
+				object-fit: contain;
+				object-position: center;
+
+				margin-right: $default_spacing;
+			}
+		}
+
+	}
+}
+

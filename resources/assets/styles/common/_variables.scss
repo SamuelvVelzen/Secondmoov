@@ -1,10 +1,30 @@
 /** Import Bootstrap functions */
 @import "~bootstrap/scss/functions";
 
+$primary: #04A1A4;
+$secondary: #FFC001;
+$tertiary: #EF3078;
+$white: #ffffff;
+$dark: #414141;
+$light: #FEFEFC;
+
 $theme-colors: (
-  primary: #525ddc
+		primary: $primary,
+		secondary: $secondary,
+		tertiary: $tertiary,
+		white: $white,
+		dark: $dark,
+		light: $light,
 );
 
 /** Bootstrap navbar fix (https://git.io/fADqW) */
 $navbar-dark-toggler-icon-bg: none;
 $navbar-light-toggler-icon-bg: none;
+
+$default_spacing: 20px;
+$default_spacing2: $default_spacing * 2;
+$default_spacing4: $default_spacing2 * 2;
+
+$fonts: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+$squircle: 15px;

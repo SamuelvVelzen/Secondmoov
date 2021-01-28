@@ -1,0 +1,16 @@
+.text-content {
+	line-height: 30px;
+
+	& > * {
+		line-height: 30px;
+		margin: $default_spacing 0;
+	}
+}
+
+.lines-3 {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3; /* number of lines to show */
+	-webkit-box-orient: vertical;
+}

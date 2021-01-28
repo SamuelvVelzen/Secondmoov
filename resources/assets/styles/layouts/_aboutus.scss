@@ -1,0 +1,33 @@
+
+.team_member {
+	padding: $default_spacing;
+	box-shadow: 0px 25px 25px rgba(65, 65, 65, 0.5);
+	border: none;
+
+	.member {
+		&_image {
+			height: 175px;
+			width: 175px;
+		}
+
+		&_name {
+			padding-top: $default_spacing;
+		}
+
+		&_text {
+			padding-top: $default_spacing;
+		}
+
+		&_contact_info {
+			padding-top: $default_spacing;
+
+			&_img {
+				margin-right: $default_spacing;
+				width: 25px;
+				height: 25px;
+				object-fit: contain;
+				object-position: center;
+			}
+		}
+	}
+}
