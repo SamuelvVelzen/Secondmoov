@@ -5,7 +5,7 @@
 @extends('layouts.app')
 
 @section('content')
-	<div class="background bg-primary"></div>
+	<div class="background {{get_field('bg_color') ? the_field('bg_color') : 'bg-primary'}}"></div>
 	<div class="container">
 		<h2 class="title mb-0 text-light col-12 col-md-6">{{the_field('container_title')}}</h2>
 		<div class="row">

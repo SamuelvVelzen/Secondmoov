@@ -5,11 +5,12 @@
 @extends('layouts.app')
 
 @php
-	$query = new WP_Query(array('post_type' => 'service', 'post_status' => 'publish','posts_per_page' => '-1'));
+	$bgColors = ['border-primary','border-secondary','border-tertiary','border-dark'];
+		$query = new WP_Query(array('post_type' => 'service', 'post_status' => 'publish','posts_per_page' => '-1'));
 @endphp
 
 @section('content')
-	<div class="background small bg-secondary"></div>
+	<div class="background small {{get_field('bg_color') ? the_field('bg_color') : 'bg-secondary'}}"></div>
 	@if(get_field('intro_title') && get_field('intro_text') && get_field('intro_image'))
 		<div class="container">
 			<div class="row">
@@ -41,7 +42,7 @@
 					</p>
 				</div>
 				<div class="service_image col-12 col-md-4 justify-content-center d-flex icon-img {{$i % 2 == 0 ?'offset-md-1':''}}">
-						<span class="border_image">
+						<span class="border_image {{get_field('border_color') ? the_field('border_color') : $bgColors[rand(0, count($bgColors) - 1)] }}">
 						<img class=""
 						     src="{{the_field('image')}}"
 						     alt="">
