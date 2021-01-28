@@ -4,8 +4,12 @@
 
 @extends('layouts.app')
 
+@php
+	$bgColors = ['border-primary','border-secondary','border-tertiary','border-dark'];
+@endphp
+
 @section('content')
-	<div class="background medium bg-secondary"></div>
+	<div class="background medium {{get_field('bg_color') ? the_field('bg_color') : 'bg-secondary'}}"></div>
 	@if(get_field('intro_title') && get_field('intro_text') && get_field('intro_image'))
 		<div class="container">
 			<div class="row">
@@ -32,7 +36,7 @@
 					@foreach($members as $member)
 						<div>
 							<div class="card text-center team_member">
-							<span class="member_image mx-auto border_image">
+								<span class="member_image mx-auto border_image {{$member['border_color'] != "" ? $member['border_color'] : $bgColors[rand(0, count($bgColors) - 1)] }}">
 								<img class="member_image_img"
 								     src="{{$member['image']}}"
 								     alt="">

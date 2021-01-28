@@ -5,7 +5,7 @@
 @extends('layouts.app')
 
 @php
-	$bgColors = ['border-primary','border-secondary','border-border-tertiary','border-dark'];
+	$bgColors = ['border-primary','border-secondary','border-tertiary','border-dark'];
 	$posts = new WP_Query(array('post_type' => 'post', 'post_status' => 'publish','posts_per_page' => '3'));
 	$services = new WP_Query(array('post_type' => 'service', 'post_status' => 'publish','posts_per_page' => '3'));
 	$forwhos = new WP_Query(array('post_type' => 'forwho', 'post_status' => 'publish','posts_per_page' => '3'));
@@ -87,7 +87,7 @@
 							@php $services->the_post() @endphp @php $serviceCount++ @endphp
 							<div class="col-12 col-md-{{count($services) == 3 ? '4' : (count($services) == 2 ?'6': '12')}}-default mb-default mb-default-md">
 								<div class="p-default text-center service">
-							<span class="service_container mx-auto border_image mb-default {{get_field('border_color') ? the_field('border_color') : $bgColors[rand(0, count($bgColors))] }}">
+							<span class="service_container mx-auto border_image mb-default {{get_field('border_color') ? the_field('border_color') : $bgColors[rand(0, count($bgColors)-1)] }}">
 								<img class="service_img"
 								     src="{{the_field('image')}}"
 								     alt=""/>
@@ -112,7 +112,7 @@
 						@php $id = $service['service']->ID @endphp
 						<div class="col-12 col-md-{{$loop->count == 3 ? '4' : ($loop->count == 2 ?'6': '12')}}-default mb-default mb-default-md">
 							<div class="p-default text-center service">
-							<span class="service_container mx-auto border_image mb-default {{get_field('border_color', $id) ? the_field('border_color', $id) : $bgColors[rand(0, count($bgColors))] }}">
+							<span class="service_container mx-auto border_image mb-default {{get_field('border_color', $id) ? the_field('border_color', $id) : $bgColors[rand(0, count($bgColors)-1)] }}">
 								<img class="service_img"
 								     src="{{the_field('image', $id)}}"
 								     alt=""/>
@@ -223,7 +223,7 @@
 					@foreach(get_field('clients') as $client)
 						<div class="col-12 col-md-{{count(get_field('clients')) == 3 ? '4' : (count(get_field('client')) == 2 ?'6': '12')}}-default mb-default mb-default-md">
 							<div class="card border-0 p-default text-center client">
-							<span class="client_container mx-auto border_image mb-default {{$client['border_color'] ? $client['border_color'] : $bgColors[rand(0, count($bgColors))] }}">
+							<span class="client_container mx-auto border_image mb-default {{$client['border_color'] ? $client['border_color'] : $bgColors[rand(0, count($bgColors)-1)] }}">
 								<img class="client_img"
 								     src="{{$client['client_image']}}"
 								     alt=""/>

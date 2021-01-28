@@ -9,7 +9,7 @@
 @endphp
 
 @section('content')
-	<div class="background small bg-tertiary"></div>
+	<div class="background small {{get_field('bg_color') ? the_field('bg_color') : 'bg-tertiary'}}"></div>
 	@if(get_field('intro_title') && get_field('intro_text') && get_field('intro_image'))
 		<div class="container">
 			<div class="row">
