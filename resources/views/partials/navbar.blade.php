@@ -11,7 +11,8 @@
 				<a class="contact_container_link d-flex flex-column"
 				   href="{{get_sub_field('type') =="E-mail" ? "mailto" : "tel"}}:{{the_sub_field('info')}}">
 					<p class="d-none d-md-block">Heb je een vraag?</p>
-					<p><b>Bel ons • </b>{{the_sub_field('info')}}</p>
+					<p><b class="d-block d-md-inline-block">Bel ons <span class="d-none d-md-inline-block">•</span>
+						</b>{{the_sub_field('info')}}</p>
 				</a>
 			</div>
 		@endif

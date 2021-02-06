@@ -28,12 +28,14 @@
 							<a href="{{ the_permalink() }}" class="d-block">
 								<img src="{{the_field('headerimage')}}" alt="" class="w-100">
 							</a>
-							<div class="content position-absolute">
-								<p class="date text-muted">{{ the_time('d F Y') }}</p>
-								<h2 class="title">{{the_field('short_title')}}</h2>
-								<p class="text">{{the_field('introduction')}}</p>
-								<a href="{{the_permalink() }}" class="btn btn-primary">Lees meer...</a>
-							</div>
+							<a href="{{ the_permalink() }}">
+								<div class="content position-absolute">
+									<p class="date text-muted">{{ the_time('d F Y') }}</p>
+									<h2 class="title">{{the_field('short_title')}}</h2>
+									<p class="text">{{the_field('introduction')}}</p>
+									<a href="{{the_permalink() }}" class="btn btn-primary">Lees meer...</a>
+								</div>
+							</a>
 						</div>
 					</div>
 					@if ($i % 2 === 0)
