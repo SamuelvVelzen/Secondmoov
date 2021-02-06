@@ -7,7 +7,6 @@ export default {
     },
     finalize() {
         // JavaScript to be fired on all pages, after page specific JS is fired
-
         if (document.getElementById('partnerCarousel')) {
             tns({
                 container: '#partnerCarousel',
@@ -111,5 +110,15 @@ export default {
                 lazyload: true,
             });
         }
+
+        document.getElementById('mobileButton').addEventListener('click', function () {
+            document.getElementsByTagName('body')[0].classList.toggle('mobile_menu');
+        })
+
+        window.addEventListener('resize', function () {
+            if (window.innerWidth > 767) {
+                document.getElementsByTagName('body')[0].classList.remove('mobile_menu');
+            }
+        })
     },
 };
