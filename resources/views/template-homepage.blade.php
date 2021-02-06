@@ -259,10 +259,12 @@
 							<a href="{{ the_permalink() }}" class="d-block post_link h-100">
 								<img src="{{the_field('headerimage')}}" alt="" class="w-100 post_image h-100">
 							</a>
-							<div class="post_content position-absolute bg-white w-100 fixed-bottom p-default squircles">
-								<p class="date text-muted">{{ the_time('d F Y') }}</p>
-								<h2>{{the_field('short_title')}}</h2>
-							</div>
+							<a href="{{ the_permalink() }}">
+								<div class="post_content position-absolute bg-white w-100 fixed-bottom p-default squircles">
+									<p class="date text-muted">{{ the_time('d F Y') }}</p>
+									<h2>{{the_field('short_title')}}</h2>
+								</div>
+							</a>
 						</div>
 					</div>
 					@endwhile
