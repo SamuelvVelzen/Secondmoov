@@ -1,0 +1,146 @@
+#navbar-upper {
+	z-index: $zindex-fixed + 6;
+	background-color: $white;
+	padding: 10px 0;
+	border-bottom: 1px solid;
+	transition: all .5s;
+	@include half-opacity($dark);
+
+	.nav_brand {
+		&_logo {
+			align-self: center;
+			justify-self: center;
+			max-height: 45px;
+			width: auto;
+		}
+	}
+
+	.contact_container {
+		&_logo {
+			max-height: 45px;
+			width: auto;
+			margin-right: $default_spacing;
+
+			@include breakpoint-md {
+				margin-right: $default_spacing /2;
+				margin-left: $default_spacing /2;
+			}
+		}
+	}
+}
+
+#navbar-lower {
+	background-color: $white;
+	z-index: $zindex-fixed + 5;
+	position: sticky;
+	top: 0;
+	box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+	transition: all .5s;
+
+	.navbar {
+		&_container {
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+
+		&_group {
+			&_item {
+				&.first {
+					transition: all .5s;
+				}
+
+				&:not(.first) {
+					margin-left: $default_spacing;
+				}
+
+				&_link {
+					font-weight: bold;
+					color: $black;
+					text-decoration: none;
+				}
+			}
+
+			#mobileButton {
+				.mobileButton {
+					width: 40px;
+					height: 26px;
+					position: relative;
+					transform: rotate(0deg);
+					transition: .5s ease-in-out;
+					cursor: pointer;
+
+					span {
+						display: block;
+						position: absolute;
+						height: 4px;
+						width: 50%;
+						background: $dark;
+						opacity: 1;
+						transform: rotate(0deg);
+						transition: .25s ease-in-out;
+
+
+						&:nth-child(even) {
+							left: 50%;
+							border-radius: 0 $squircle $squircle 0;
+						}
+
+						&:nth-child(odd) {
+							left: 0px;
+							border-radius: $squircle 0 0 $squircle;
+						}
+
+						&:nth-child(1), &:nth-child(2) {
+							top: 0px;
+						}
+
+						&:nth-child(3), &:nth-child(4) {
+							top: 10px;
+						}
+
+						&:nth-child(5), &:nth-child(6) {
+							top: 20px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#mobileNavbarContainer {
+	position: fixed;
+	display: none;
+	width: 100%;
+	height: 100%;
+	z-index: $zindex-fixed + 4;
+
+
+	.mobileNavbarContainerInner {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: $light;
+		width: 100%;
+		height: 100%;
+		transition: all .5s;
+		transform: translateX(100%);
+
+		.navbar_group_item_link {
+			h3 {
+				margin-top: $default_spacing;
+				font-weight: bold;
+				color: $black;
+			}
+
+			&:first-of-type h3 {
+				margin-top: 0;
+			}
+		}
+
+		.btn {
+			margin-top: $default_spacing;
+		}
+	}
+}
