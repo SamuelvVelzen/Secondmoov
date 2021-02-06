@@ -151,7 +151,7 @@
 						@php $datablocksCountWhile = 0 @endphp
 						@while($forwhos->have_posts())
 							@php $forwhos->the_post() @endphp @php $datablocksCountWhile++ @endphp
-							<div class="datablock col-12 col-md-{{$forwhos->found_posts == 3 ? '4' : ($forwhos->found_posts == 2 ?'6': '12')}} p-default d-flex flex-column {{$datablocksCountWhile == 1 ? 'pl-md-0' : null}}">
+							<div class="datablock col-12 col-md-{{$forwhos->found_posts == 3 ? '4' : ($forwhos->found_posts == 2 ?'6': '12')}} d-flex flex-column {{$datablocksCountWhile == 1 ? 'pl-default-md' : null}}">
 								<h4 class="text-light mb-default">{{the_field('short_title', $datablockId)}}</h4>
 								<p class="text-light mb-default lines-3">{{the_field('introduction')}}</p>
 								@php $link = get_the_title() @endphp
@@ -164,8 +164,8 @@
 					@else
 						@foreach(get_field('datablocks') as $datablocks)
 							@php $datablockId = $datablocks['datablock']->ID @endphp
-							<div class="datablock col-12 col-md-{{$loop->count == 3 ? '4' : ($loop->count == 2 ?'6': '12')}} p-default d-flex flex-column {{$loop->first == 1 ? 'pl-md-0' : null}}">
-								<h4 class="text-light mb-default">{{the_field('short_title', $datablockId)}}</h4>
+							<div class="datablock col-12 col-md-{{$loop->count == 3 ? '4' : ($loop->count == 2 ?'6': '12')}} p-default d-flex flex-column {{$loop->first == 1 ? 'pl-default-md' : null}}">
+								<h4 class="text-light mb-default">{{get_field('content', $datablockId)['short_title']}}</h4>
 								<p class="text-light mb-default lines-3">{{get_field('content', $datablockId)['introduction']}}</p>
 								@php $link = get_the_title($datablockId) @endphp
 								<a href="{{$datablocks_link . '#' . $link}}"
