@@ -13,8 +13,8 @@
 	@if(get_field('intro_title') && get_field('intro_text') && get_field('intro_image'))
 		@include('components.introduction', ['title' => 'intro_title', 'text' => 'intro_text', 'image' => 'intro_image'])
 
-		@while(have_posts()) @php the_post() @endphp
 		@if($query->have_posts())
+			@while(have_posts()) @php the_post() @endphp
 			<div class="container">
 				@php($i = 0)
 				@while($query->have_posts()) @php($query->the_post()) @php($i++)
@@ -37,8 +37,10 @@
 				</div>
 				@endwhile
 			</div>
+			@endwhile
+		@else
+			<h3 class="text-light">{{the_field('notice')}}</h3>
 		@endif
-		@endwhile
 
 	@endif
 @endsection
