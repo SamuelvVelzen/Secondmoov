@@ -10,8 +10,7 @@
 	<div class="entry-content text-content">
 		@include('components.flexible_content')
 	</div>
-	<footer>
-		{!! wp_link_pages(['echo' => 0, 'before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']) !!}
+	<footer class="{{get_field('background_color_relevant') ? the_field('background_color_relevant') : 'bg-primary'}} pb-default-4">
+		@include('components.relevant_posts', array('query' => $query))
 	</footer>
-	@php comments_template('/partials/comments.blade.php') @endphp
 </article>

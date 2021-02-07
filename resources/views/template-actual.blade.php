@@ -33,7 +33,8 @@
 									<p class="date text-muted">{{ the_time('d F Y') }}</p>
 									<h2 class="title">{{the_field('short_title')}}</h2>
 									<p class="text">{{the_field('introduction')}}</p>
-									<a href="{{the_permalink() }}" class="btn btn-primary">Lees meer...</a>
+									<a href="{{the_permalink() }}"
+									   class="btn btn-primary">{{get_field('cta_label') ? the_field('cta_label') : 'Lees meer...'}}</a>
 								</div>
 							</a>
 						</div>
