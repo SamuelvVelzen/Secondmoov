@@ -15,8 +15,8 @@
 			<h2 class="title text-light col-12 col-md-6">{{the_field('title')}}</h2>
 		</div>
 
-		@while(have_posts()) @php the_post() @endphp
 		@if($query->have_posts())
+			@while(have_posts()) @php the_post() @endphp
 
 			@php($i = 0)
 			@while($query->have_posts()) @php($query->the_post()) @php($i++)
@@ -43,8 +43,9 @@
 			@endif
 			@endwhile
 			@php(wp_reset_postdata())
-	</div>
-	@endif
-	@endwhile()
+			@endwhile
+		@else
+			<h3 class="text-light">{{the_field('notice')}}</h3>
+		@endif
 	</div>
 @endsection
