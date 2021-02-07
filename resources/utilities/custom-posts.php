@@ -14,7 +14,7 @@
 				'has_archive' => true,
 				'rewrite' => array('slug' => 'services'),
 				'show_in_rest' => true,
-
+				'show_in_menu' => 'content'
 			)
 		);
 
@@ -29,7 +29,7 @@
 				'has_archive' => true,
 				'rewrite' => array('slug' => 'forwhos'),
 				'show_in_rest' => true,
-
+				'show_in_menu' => 'content'
 			)
 		);
 	}
