@@ -64,7 +64,7 @@
 			$menu[$position] = $separator;
 		}
 	}
-	
+
 	if (function_exists('acf_add_options_page')) {
 		// add parent
 		$parent = acf_add_options_page(array(
@@ -89,22 +89,6 @@
 			'page_title' => 'Footer',
 			'menu_title' => 'Footer',
 			'menu_slug' => 'footer',
-			'parent_slug' => $parent['menu_slug'],
-		));
-
-		// add sub page
-		acf_add_options_sub_page(array(
-			'page_title' => 'Usps',
-			'menu_title' => 'Usps',
-			'menu_slug' => 'usps',
-			'parent_slug' => $parent['menu_slug'],
-		));
-
-		// add sub page
-		acf_add_options_sub_page(array(
-			'page_title' => 'Sidebar',
-			'menu_title' => 'Sidebar',
-			'menu_slug' => 'sidebar',
 			'parent_slug' => $parent['menu_slug'],
 		));
 

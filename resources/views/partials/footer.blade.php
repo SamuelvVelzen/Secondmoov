@@ -15,6 +15,7 @@
 			<div class="service_social col-12 col-sm-6 col-md-4">
 				@if (have_rows('service','option'))
 					<div class="services col-12">
+						@php($count = 0)
 						@while(have_rows('service','option')) @php(the_row())
 						@php($pageID = get_sub_field('link', false, false))
 						@php($count++)
