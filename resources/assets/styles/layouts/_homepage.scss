@@ -12,11 +12,30 @@
 				clip-path: initial;
 			}
 
-			&_inner {
+			&_outer {
+				@include breakpoint-sm-big {
+					width: 45%;
+				}
+
 				@include breakpoint-sm {
 					display: flex;
 					flex-direction: column;
 					align-items: center;
+				}
+
+				h2 {
+					@include breakpoint-sm {
+						text-align: center;
+					}
+
+					word-wrap: break-word;
+					hypens: auto;
+				}
+
+				p {
+					@include breakpoint-sm {
+						text-align: center;
+					}
 				}
 			}
 		}

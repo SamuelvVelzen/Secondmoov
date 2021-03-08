@@ -14,8 +14,8 @@
 @section('content')
 	<div id="hero" class="w-100 position-relative overflow-hidden">
 		@if(get_field('hero_content'))
-			<div class="hero_content position-absolute d-flex align-items-center h-100 w-100">
-				<div class="hero_content_inner container">
+			<div class="hero_content position-absolute d-flex align-items-center h-100 w-100 container">
+				<div class="hero_content_outer">
 					<h2 class="font-weight-bold text-light">{{get_field('hero_content')['title']}}</h2>
 					<h2 class="text-secondary mb-default font-weight-normal">{{get_field('hero_content')['subtitle']}}</h2>
 					<p class="text-light mb-default">{{get_field('hero_content')['text']}}</p>
@@ -32,7 +32,7 @@
 						<img class="square w-100 h-100"
 						     src="{{$image}}"
 						     alt=""
-						     style="object-fit: cover; object-position: center;"
+						     style="object-fit: cover; object-position: center; min-height:500px"
 						/>
 					</div>
 				@endforeach
@@ -50,7 +50,7 @@
 		<div class="container-fluid pb-default-2 mb-default-2 {{get_field('usps_bg_color') ? the_field('usps_bg_color') : 'bg-secondary'}}">
 			<div class="container">
 				<div class="row">
-					<h2 class="title col-12 col-md-6 mb-default">{{the_field('usps_title')}}</h2>
+					<h2 class="title col-12 col-md-6 mb-default {{get_field('usps_bg_color') == 'bg-primary' ? 'text-light' :null}}">{{the_field('usps_title')}}</h2>
 				</div>
 				@php $uspsCount = 1 @endphp
 				@foreach(get_field('usps') as $usp)
@@ -60,7 +60,7 @@
 							<div class="col-12 col-md-6 d-flex align-items-center {{$uspsCount % 2 != 0 ? "mb-default  mb-default-md" : null}}">
 								<img src="{{$usp['usp_icon']}}" alt=""
 								     style="width:20px; height:20px;" class="square"/>
-								<p class="ml-default">{{$usp['usp_text']}}</p>
+								<p class="ml-default {{get_field('usps_bg_color') == 'bg-primary' ? 'text-light' :null}}">{{$usp['usp_text']}}</p>
 							</div>
 							@if($uspsCount % 2 == 0)
 						</div>
