@@ -1,5 +1,10 @@
 .info_container {
 	margin: $default_spacing2 0;
+
+	img {
+		height: 50px;
+		width: auto;
+	}
 }
 
 .info_content {
