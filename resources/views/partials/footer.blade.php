@@ -31,8 +31,7 @@
 				@if (have_rows('social','option'))
 					<div class="socials col-12 order-0 ">
 						@while(have_rows('social','option')) @php(the_row())
-						@php($pageID = get_sub_field('url', false, false))
-						<a class="socials_link" href="{{get_the_permalink($pageID)}}">
+						<a class="socials_link" href="{{the_sub_field('url')}}">
 							<img class="socials_img square" src="{{the_sub_field('image')}}" alt="">
 						</a>
 						@endwhile
