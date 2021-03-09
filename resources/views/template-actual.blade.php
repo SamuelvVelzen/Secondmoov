@@ -6,6 +6,7 @@
 
 @php
 	$query = new WP_Query(array('post_type' => 'post', 'post_status' => 'publish','posts_per_page' => '-1'));
+	$months = ['januari', 'februari', 'maart','april','mei','juni','juli','augustus','september','oktober','november','december'];
 @endphp
 
 @section('content')
@@ -30,7 +31,10 @@
 							</a>
 							<a href="{{ the_permalink() }}">
 								<div class="content position-absolute">
-									<p class="date text-muted">{{ the_time('d F Y') }}</p>
+									<p class="date text-muted">
+										@php($result = str_replace(get_the_time('F'), $months[get_the_time('n')-1], get_the_time('d F Y')))
+										{{$result}}
+									</p>
 									<h2 class="title">{{the_field('short_title')}}</h2>
 									<p class="text">{{the_field('introduction')}}</p>
 									<a href="{{the_permalink() }}"

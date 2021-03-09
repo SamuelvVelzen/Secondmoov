@@ -1,3 +1,7 @@
+@php
+	$months = ['januari', 'februari', 'maart','april','mei','juni','juli','augustus','september','oktober','november','december'];
+@endphp
+
 <div class="container">
 	<div class="row">
 		<h2 class="title col-12 col-md-6 {{get_field('background_color_relevant') == 'bg-primary' || get_field('background_color_relevant') == ""? 'text-light' : null}}">{{get_field('title') ? get_field('title') : 'Lees meer.'}}</h2>
@@ -62,7 +66,10 @@
 								</a>
 								<a href="{{ the_permalink() }}">
 									<div class="content position-absolute">
-										<p class="date text-muted">{{ the_time('d F Y') }}</p>
+										<p class="date text-muted">
+											@php($result = str_replace(get_the_time('F'), $months[get_the_time('n')-1], get_the_time('d F Y')))
+											{{$result}}
+										</p>
 										<h2 class="title">{{the_field('short_title')}}</h2>
 										<p class="text">{{the_field('introduction')}}</p>
 										<a href="{{the_permalink() }}"
@@ -88,7 +95,10 @@
 						</a>
 						<a href="{{ the_permalink() }}">
 							<div class="content position-absolute">
-								<p class="date text-muted">{{ the_time('d F Y') }}</p>
+								<p class="date text-muted">
+									@php($result = str_replace(get_the_time('F'), $months[get_the_time('n')-1], get_the_time('d F Y')))
+									{{$result}}
+								</p>
 								<h2 class="title">{{the_field('short_title')}}</h2>
 								<p class="text">{{the_field('introduction')}}</p>
 								<a href="{{the_permalink() }}"

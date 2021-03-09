@@ -1,3 +1,7 @@
+@php
+	$months = ['januari', 'februari', 'maart','april','mei','juni','juli','augustus','september','oktober','november','december'];
+@endphp
+
 <div class="container p-default px-0">
 	<div class="row">
 		<img src="{{the_field('headerimage')}}" alt="" class="w-100">
@@ -14,5 +18,8 @@
 										alt="">
 							</span>
 	<p class="text-muted">{{ get_the_author() }}</p>
-	<time class="updated ml-auto text-muted" datetime="{{ get_post_time('c', true) }}">{{ get_the_date() }}</time>
+	<time class="updated ml-auto text-muted" datetime="{{ get_post_time('c', true) }}">
+		@php($result = str_replace(get_the_time('F'), $months[get_the_time('n')-1], get_the_time('d F Y')))
+		{{$result}}
+	</time>
 </div>
