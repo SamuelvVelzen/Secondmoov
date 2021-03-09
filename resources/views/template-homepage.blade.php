@@ -9,6 +9,7 @@
 	$posts = new WP_Query(array('post_type' => 'post', 'post_status' => 'publish','posts_per_page' => '3'));
 	$services = new WP_Query(array('post_type' => 'service', 'post_status' => 'publish','posts_per_page' => '3'));
 	$forwhos = new WP_Query(array('post_type' => 'forwho', 'post_status' => 'publish','posts_per_page' => '3'));
+	$months = ['januari', 'februari', 'maart','april','mei','juni','juli','augustus','september','oktober','november','december'];
 @endphp
 
 @section('content')
@@ -247,7 +248,7 @@
 		<div id="posts" class="container-fluid">
 			<div class="container">
 				<div class="row">
-					<h2 class="title col-12 col-md-6 mt-0 mb-default">Voordelen van 2ndMoov.</h2>
+					<h2 class="title col-12 col-md-6 mt-0 mb-default">{{the_field('actual_title')}}</h2>
 				</div>
 			</div>
 			@if(count(get_field('posts')) != 0 && $posts->have_posts())
@@ -261,7 +262,10 @@
 							</a>
 							<a href="{{ the_permalink() }}">
 								<div class="post_content position-absolute bg-white w-100 fixed-bottom p-default squircles">
-									<p class="date text-muted">{{ the_time('d F Y') }}</p>
+									<p class="date text-muted">
+										@php($result = str_replace(get_the_time('F'), $months[get_the_time('n')-1], get_the_time('d F Y')))
+										{{$result}}
+									</p>
 									<h2>{{the_field('short_title')}}</h2>
 								</div>
 							</a>
@@ -282,7 +286,10 @@
 									     class="w-100 post_image h-100">
 								</a>
 								<div class="post_content position-absolute bg-white w-100 fixed-bottom p-default squircles">
-									<p class="date text-muted">{{ get_the_time('d F Y', $postId) }}</p>
+									<p class="date text-muted">
+										@php($result = str_replace(get_the_time('F',$postId), $months[get_the_time('n',$postId)-1], get_the_time('d F Y',$postId)))
+										{{$result}}
+									</p>
 									<h2>{{the_field('short_title', $postId)}}</h2>
 								</div>
 							</div>
