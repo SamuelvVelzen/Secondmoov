@@ -78,9 +78,9 @@
 
 		// add sub page
 		acf_add_options_sub_page(array(
-			'page_title' => 'Menu',
-			'menu_title' => 'Menu',
-			'menu_slug' => 'menu',
+			'page_title' => 'Header',
+			'menu_title' => 'Header',
+			'menu_slug' => 'header',
 			'parent_slug' => $parent['menu_slug'],
 		));
 
