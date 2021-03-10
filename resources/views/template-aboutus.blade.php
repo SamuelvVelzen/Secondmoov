@@ -21,10 +21,10 @@
 				<div class="row">
 					<h2 class="col-12 col-md-6 mb-default">{{the_field('member_title')}}</h2>
 				</div>
-				<div id="memberCarousel" class="mb-default-4">
+				<div id="memberCarousel" class="mb-default-4 align-items-stretch d-flex">
 					@foreach($members as $member)
 						<div>
-							<div class="card text-center team_member">
+							<div class="card text-center team_member h-100">
 								<span class="member_image mx-auto border_image {{$member['border_color'] != "" ? $member['border_color'] : $bgColors[rand(0, count($bgColors) - 1)] }}">
 								<img class="member_image_img"
 								     src="{{$member['image']}}"
@@ -36,7 +36,7 @@
 								<p class="member_text">{{$member['text']}}</p>
 
 								@foreach($member['contact_information'] as $contact)
-									<div class="member_contact_info d-flex justify-content-center align-items-center">
+									<div class="member_contact_info d-flex justify-content-center align-items-center mt-auto">
 										@if($contact['type'] === "Whatsapp")
 											<img class="square member_contact_info_img"
 											     src="@asset('images/mail.png')"

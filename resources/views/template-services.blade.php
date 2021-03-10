@@ -31,7 +31,7 @@
 				</div>
 				<div class="service_image col-12 col-md-4 justify-content-center d-flex icon-img {{$i % 2 == 0 ?'offset-md-1':''}}">
 						<span class="border_image {{get_field('border_color') ? the_field('border_color') : $bgColors[rand(0, count($bgColors) - 1)] }}">
-						<img class=""
+						<img class="service_img"
 						     src="{{the_field('image')}}"
 						     alt="">
 							</span>

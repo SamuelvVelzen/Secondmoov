@@ -9,7 +9,13 @@
 		object-fit: cover;
 		object-position: center;
 		height: calc(100% - 25px);
-		width: calc(100% - 25px)
+		width: calc(100% - 25px);
+
+		&.service_img {
+			border-radius: 0;
+			height: calc(100% - 50px);
+			width: calc(100% - 50px);
+		}
 	}
 
 	&.border-primary:before {
