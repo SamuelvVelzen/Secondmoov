@@ -1,17 +1,22 @@
 <div id="navbar-upper">
 	<div class="container d-flex align-items-center">
 		<a class="nav_brand" href="{{ home_url('/') }}">
-			<img class="nav_brand_logo square" src="@asset('images/logo.png')">
+			{{the_field('logo')}}
+			@if(get_field('logo', 'option'))
+				<img class="nav_brand_logo" src="{{the_field('logo', 'option')}}">
+			@else
+				<img class="nav_brand_logo" src="@asset('images/logo.png')">
+			@endif
 		</a>
 		@while(have_rows('contact','option')) @php(the_row())
 		@php($pageID = get_sub_field('url', false, false))
-		@if(get_sub_field('type') != "E-mail")
+		@if(get_sub_field('type') == "Telefoonnummer")
 			<div class="ml-auto contact_container d-flex align-items-center">
 				<img class="contact_container_logo square" src="@asset('images/phone.png')">
-				<a class="contact_container_link d-flex flex-column"
-				   href="{{get_sub_field('type') =="E-mail" ? "mailto" : "tel"}}:{{the_sub_field('info')}}">
+				<a class="contact_container_link d-flex flex-column text-decoration-none"
+				   href="tel:{{the_sub_field('info')}}">
 					<p class="d-none d-md-block">Heb je een vraag?</p>
-					<p><b class="d-block d-md-inline-block">Bel ons <span class="d-none d-md-inline-block">•</span>
+					<p><b class="d-block d-md-inline-block">Bel ons <span class="d-none d-md-inline-block">• </span>
 						</b>{{the_sub_field('info')}}</p>
 				</a>
 			</div>

@@ -4,13 +4,14 @@
 	padding: 10px 0;
 	border-bottom: 1px solid;
 	transition: all .5s;
+
 	@include half-opacity($dark);
 
 	.nav_brand {
 		&_logo {
 			align-self: center;
 			justify-self: center;
-			max-height: 45px;
+			max-height: 60px;
 			width: auto;
 		}
 	}

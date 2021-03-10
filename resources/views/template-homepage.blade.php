@@ -9,6 +9,7 @@
 	$posts = new WP_Query(array('post_type' => 'post', 'post_status' => 'publish','posts_per_page' => '3'));
 	$services = new WP_Query(array('post_type' => 'service', 'post_status' => 'publish','posts_per_page' => '3'));
 	$forwhos = new WP_Query(array('post_type' => 'forwho', 'post_status' => 'publish','posts_per_page' => '3'));
+	$months = ['januari', 'februari', 'maart','april','mei','juni','juli','augustus','september','oktober','november','december'];
 @endphp
 
 @section('content')
@@ -184,9 +185,9 @@
 				<div class="row">
 					<h2 class="title col-12 col-md-6 mb-default">{{the_field('app_title')}}</h2>
 
-					<p class="text-content mb-default col-12">
-						{{the_field('app_text')}}
-					</p>
+					<div class="text-content mb-default col-12">
+						{!! the_field('app_text') !!}
+					</div>
 				</div>
 			</div>
 
@@ -222,7 +223,7 @@
 				<div class="row justify-content-between">
 					@foreach(get_field('clients') as $client)
 						<div class="col-12 col-md-{{count(get_field('clients')) == 3 ? '4' : (count(get_field('client')) == 2 ?'6': '12')}}-default mb-default mb-default-md">
-							<div class="card border-0 p-default text-center client">
+							<div class="card h-100 border-0 p-default text-center client">
 							<span class="client_container mx-auto border_image mb-default {{$client['border_color'] ? $client['border_color'] : $bgColors[rand(0, count($bgColors)-1)] }}">
 								<img class="client_img"
 								     src="{{$client['client_image']}}"
@@ -247,50 +248,67 @@
 		<div id="posts" class="container-fluid">
 			<div class="container">
 				<div class="row">
-					<h2 class="title col-12 col-md-6 mt-0 mb-default">Voordelen van 2ndMoov.</h2>
+					<h2 class="title col-12 col-md-6 mt-0 mb-default">{{the_field('actual_title')}}</h2>
 				</div>
 			</div>
-			@if(count(get_field('posts')) != 0 && $posts->have_posts())
-				@while(have_posts()) @php the_post() @endphp
-				<div class="row post justify-content-between mb-default-2">
-					@while($posts->have_posts()) @php($posts->the_post())
-					<div class="col-12 col-md-{{$posts->found_posts > 3 ? '4' : ($posts->found_posts == 2 ?'6': '12')}}-default mb-default mb-default-md">
-						<div class="card border-0 m-default position-relative h-100">
-							<a href="{{ the_permalink() }}" class="d-block post_link h-100">
-								<img src="{{the_field('headerimage')}}" alt="" class="w-100 post_image h-100">
-							</a>
-							<a href="{{ the_permalink() }}">
-								<div class="post_content position-absolute bg-white w-100 fixed-bottom p-default squircles">
-									<p class="date text-muted">{{ the_time('d F Y') }}</p>
-									<h2>{{the_field('short_title')}}</h2>
-								</div>
-							</a>
-						</div>
-					</div>
-					@endwhile
-				</div>
-				@php(wp_reset_postdata())
-				@endwhile
-			@else
-				<div class="row post justify-content-between mb-default-2">
-					@foreach(get_field('posts') as $singlePost)
-						@php( $postId = $singlePost['post']->ID)
-						<div class="col-12 col-md-{{$loop->count == 3 ? '4' : ($loop->count == 2 ?'6': '12')}}-default mb-default mb-default-md">
-							<div class="card border-0 m-default position-relative h-100">
-								<a href="{{ get_the_permalink($postId) }}" class="d-block post_link h-100">
-									<img src="{{the_field('headerimage', $postId)}}" alt=""
-									     class="w-100 post_image h-100">
-								</a>
-								<div class="post_content position-absolute bg-white w-100 fixed-bottom p-default squircles">
-									<p class="date text-muted">{{ get_the_time('d F Y', $postId) }}</p>
-									<h2>{{the_field('short_title', $postId)}}</h2>
-								</div>
+			@if(get_field('posts') == null && $posts->have_posts() && $posts->found_posts == 1)
+				<div class="container">
+					@elseif(get_field('posts') != null && count(get_field('posts'))== 0)
+						<div class="container">
+							@endif
+
+							<div class="row post justify-content-between mb-default-2">
+								@if(get_field('posts') == null && $posts->have_posts())
+									@while(have_posts()) @php the_post() @endphp
+
+									@while($posts->have_posts()) @php($posts->the_post())
+									<div class="col-12 col-md-{{$posts->found_posts >= 3 ? '4' : ($posts->found_posts == 2 ?'6': '12')}}-default mb-default mb-default-md">
+										<div class="card border-0 {{$posts->found_posts != 1 ? 'mb-default' : null}} position-relative h-100">
+											<a href="{{ the_permalink() }}" class="d-block post_link h-100">
+												<img src="{{the_field('headerimage')}}" alt=""
+												     class="w-100 post_image h-100">
+											</a>
+											<a href="{{ the_permalink() }}">
+												<div class="post_content position-absolute bg-white w-100 fixed-bottom p-default squircles">
+													<p class="date text-muted">
+														@php($result = str_replace(get_the_time('F'), $months[get_the_time('n')-1], get_the_time('d F Y')))
+														{{$result}}
+													</p>
+													<h2>{{the_field('short_title')}}</h2>
+												</div>
+											</a>
+										</div>
+									</div>
+									@endwhile
+									@php(wp_reset_postdata())
+									@endwhile
+								@else
+									@foreach(get_field('posts') as $singlePost)
+										@php( $postId = $singlePost['post']->ID)
+										<div class="col-12 col-md-{{$loop->count >= 3 ? '4' : ($loop->count == 2 ?'6': '12')}}-default mb-default mb-default-md">
+											<div class="card border-0 {{$loop->count != 1 ? 'mb-default' : null}} position-relative h-100">
+												<a href="{{ get_the_permalink($postId) }}"
+												   class="d-block post_link h-100">
+													<img src="{{the_field('headerimage', $postId)}}" alt=""
+													     class="w-100 post_image h-100">
+												</a>
+												<div class="post_content position-absolute bg-white w-100 fixed-bottom p-default squircles">
+													<p class="date text-muted">
+														@php($result = str_replace(get_the_time('F',$postId), $months[get_the_time('n',$postId)-1], get_the_time('d F Y',$postId)))
+														{{$result}}
+													</p>
+													<h2>{{the_field('short_title', $postId)}}</h2>
+												</div>
+											</div>
+										</div>
+									@endforeach
+								@endif
 							</div>
+							@if(get_field('posts') == null && $posts->have_posts() && $posts->found_posts == 1)
 						</div>
-					@endforeach
+					@elseif(get_field('posts') != null && count(get_field('posts'))== 0)
 				</div>
 			@endif
-
 
 			<div class="container d-flex">
 				<a href="{{the_field('actual_cta_link')}}"
