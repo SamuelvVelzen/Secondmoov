@@ -220,9 +220,9 @@
 				</div>
 			</div>
 			<div class="container position-relative pb-default-2 mb-default-2">
-				<div class="row justify-content-between">
+				<div id="clientCarousel" class="row justify-content-between">
 					@foreach(get_field('clients') as $client)
-						<div class="col-12 col-md-{{count(get_field('clients')) == 3 ? '4' : (count(get_field('client')) == 2 ?'6': '12')}}-default mb-default mb-default-md">
+						<div class="col-12 mb-default mb-default-md">
 							<div class="card h-100 border-0 p-default text-center client">
 							<span class="client_container mx-auto border_image mb-default {{$client['border_color'] ? $client['border_color'] : $bgColors[rand(0, count($bgColors)-1)] }}">
 								<img class="client_img"
@@ -238,6 +238,11 @@
 									bij {{$client['client_company']}}, {{$client['client_place']}}</p>
 							</div>
 						</div>
+					@endforeach
+				</div>
+				<div id="customize-nav-clients" class="tns-nav-circles position-absolute bottom">
+					@foreach(get_field('clients') as $appIamge)
+						<span></span>
 					@endforeach
 				</div>
 			</div>

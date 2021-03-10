@@ -1,4 +1,8 @@
 .btn {
 	border-radius: $squircle;
 	padding: 5px 20px;
+
+	@include breakpoint-sm {
+		padding: 5px 10px;
+	}
 }

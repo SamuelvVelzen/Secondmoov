@@ -111,6 +111,36 @@ export default {
             });
         }
 
+        if (document.getElementById('clientCarousel')) {
+            tns({
+                container: '#clientCarousel',
+                items: 2,
+                slideBy: 'page',
+                nav: true,
+                navContainer: '#customize-nav-clients',
+                controls: false,
+                arrowKeys: false,
+                autoplay: true,
+                autoplayButtonOutput: false,
+                mouseDrag: true,
+                gutter: 20,
+                lazyload: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                    },
+                    576: {
+                        items: 2,
+                    },
+                    992: {
+                        items: 3,
+                        gutter: 40,
+                    },
+                },
+            });
+        }
+
+
         document.getElementById('mobileButton').addEventListener('click', function () {
             document.getElementsByTagName('body')[0].classList.toggle('mobile_menu');
         })
