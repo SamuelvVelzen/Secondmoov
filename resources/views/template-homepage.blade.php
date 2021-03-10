@@ -185,9 +185,9 @@
 				<div class="row">
 					<h2 class="title col-12 col-md-6 mb-default">{{the_field('app_title')}}</h2>
 
-					<p class="text-content mb-default col-12">
-						{{the_field('app_text')}}
-					</p>
+					<div class="text-content mb-default col-12">
+						{!! the_field('app_text') !!}
+					</div>
 				</div>
 			</div>
 
@@ -223,7 +223,7 @@
 				<div class="row justify-content-between">
 					@foreach(get_field('clients') as $client)
 						<div class="col-12 col-md-{{count(get_field('clients')) == 3 ? '4' : (count(get_field('client')) == 2 ?'6': '12')}}-default mb-default mb-default-md">
-							<div class="card border-0 p-default text-center client">
+							<div class="card h-100 border-0 p-default text-center client">
 							<span class="client_container mx-auto border_image mb-default {{$client['border_color'] ? $client['border_color'] : $bgColors[rand(0, count($bgColors)-1)] }}">
 								<img class="client_img"
 								     src="{{$client['client_image']}}"
