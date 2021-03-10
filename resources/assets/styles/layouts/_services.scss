@@ -18,6 +18,11 @@
 	}
 
 	&_image {
+		& > * {
+			position: sticky;
+			top: 96px;
+		}
+
 		@include breakpoint-md {
 			order: 1;
 		}
