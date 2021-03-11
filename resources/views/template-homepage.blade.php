@@ -193,17 +193,17 @@
 
 			@if(get_field('app_gallery'))
 				<div id="appCarousel" class="d-flex">
-					@foreach(get_field('app_gallery') as $appIamge)
+					@foreach(get_field('app_gallery') as $appImage)
 						<div class="">
 							<img class="w-100 h-100"
-							     src="{{$appIamge}}"
+							     src="{{$appImage}}"
 							     alt=""/>
 						</div>
 					@endforeach
 
 				</div>
 				<div id="customize-nav-app" class="tns-nav-circles position-absolute bottom">
-					@foreach(get_field('app_gallery') as $appIamge)
+					@foreach(get_field('app_gallery') as $appImage)
 						<span></span>
 					@endforeach
 				</div>
@@ -219,16 +219,16 @@
 					<h2 class="title col-12 col-md-6 mt-0 mb-default">{{the_field('clients_title')}}</h2>
 				</div>
 			</div>
-			<div class="container position-relative pb-default-2 mb-default-2">
-				<div id="clientCarousel" class="row justify-content-between">
+			<div class="container position-relative mb-default-2">
+				<div id="clientCarousel" class="row justify-content-between pb-default-4 mb-default-2">
 					@foreach(get_field('clients') as $client)
-						<div class="col-12 mb-default mb-default-md">
+						<div>
 							<div class="card h-100 border-0 p-default text-center client">
-							<span class="client_container mx-auto border_image mb-default {{$client['border_color'] ? $client['border_color'] : $bgColors[rand(0, count($bgColors)-1)] }}">
-								<img class="client_img"
-								     src="{{$client['client_image']}}"
-								     alt=""/>
-							</span>
+													<span class="client_container mx-auto border_image mb-default {{$client['border_color'] ? $client['border_color'] : $bgColors[rand(0, count($bgColors)-1)] }}">
+														<img class="client_img"
+														     src="{{$client['client_image']}}"
+														     alt=""/>
+													</span>
 
 								<h4 class="client_quote mb-default">"{{$client['client_quote']}}"</h4>
 
@@ -241,7 +241,7 @@
 					@endforeach
 				</div>
 				<div id="customize-nav-clients" class="tns-nav-circles position-absolute bottom">
-					@foreach(get_field('clients') as $appIamge)
+					@foreach(get_field('clients') as $appImage)
 						<span></span>
 					@endforeach
 				</div>
