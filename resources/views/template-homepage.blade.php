@@ -75,43 +75,50 @@
 
 	@if(get_field('services_title') && get_field('services_cta_link'))
 		@php $services_link = substr(get_field('services_cta_link'), 0, -1) @endphp
-		<div id="services" class="container">
+		<div id="services" class="container position-relative">
 			<div class="row">
 				<h2 class="title col-12 col-md-6 mt-0 mb-default">{{the_field('services_title')}}</h2>
 			</div>
-			<div class="row justify-content-between">
-				@if(count(get_field('services')) == 0 && $services->have_posts())
+			@if(get_field('services') == null && $services->have_posts())
+				<div id="serviceContainer" class="row justify-content-between position-relative mb-4">
 					@while(have_posts()) @php the_post() @endphp
-					<div class="row post justify-content-between mb-default-2">
-						@php $serviceCount = 0 @endphp
-						@while($services->have_posts())
-							@php $services->the_post() @endphp @php $serviceCount++ @endphp
-							<div class="col-12 col-md-{{count($services) == 3 ? '4' : (count($services) == 2 ?'6': '12')}}-default mb-default mb-default-md">
-								<div class="p-default text-center service">
+					@php $serviceCount = 0 @endphp
+					@while($services->have_posts())
+						@php $services->the_post() @endphp @php $serviceCount++ @endphp
+						<div class="mb-default mb-default-md">
+							<div class="p-default text-center service">
 							<span class="service_container mx-auto border_image mb-default {{get_field('border_color') ? the_field('border_color') : $bgColors[rand(0, count($bgColors)-1)] }}">
 								<img class="service_img"
 								     src="{{the_field('image')}}"
 								     alt=""/>
 							</span>
 
-									<h4 class="service_name mb-default">
-										{{the_title()}}
-									</h4>
+								<h4 class="service_name mb-default">
+									{{the_title()}}
+								</h4>
 
-									<p class="service_text mb-default lines-3">{{the_field('introduction')}}</p>
-									@php $link = get_the_title() @endphp
-									<a href="{{$services_link . '#' . $link}}"
-									   class="btn btn-outline-primary">{{get_field('cta_label') ? the_field('cta_label') : 'Lees meer'}}</a>
-								</div>
+								<p class="service_text mb-default lines-3">{{the_field('introduction')}}</p>
+								@php $link = get_the_title() @endphp
+								<a href="{{$services_link . '#' . $link}}"
+								   class="btn btn-outline-primary">{{get_field('cta_label') ? the_field('cta_label') : 'Lees meer'}}</a>
 							</div>
-						@endwhile
-					</div>
+						</div>
+					@endwhile
 					@php wp_reset_postdata() @endphp
 					@endwhile
-				@else
+				</div>
+
+				@php $total = $services->found_posts >= 3 ? 3 : $services->found_posts  @endphp
+				<div id="customize-nav-service" class="tns-nav-circles position-absolute bottom">
+					@for($i = 0; $i < $total; $i++)
+						<span></span>
+					@endfor
+				</div>
+			@else
+				<div id="serviceContainer" class="row justify-content-between position-relative mb-4">
 					@foreach(get_field('services') as $service)
 						@php $id = $service['service']->ID @endphp
-						<div class="col-12 col-md-{{$loop->count == 3 ? '4' : ($loop->count == 2 ?'6': '12')}}-default mb-default mb-default-md">
+						<div class="mb-default mb-default-md">
 							<div class="p-default text-center service">
 							<span class="service_container mx-auto border_image mb-default {{get_field('border_color', $id) ? the_field('border_color', $id) : $bgColors[rand(0, count($bgColors)-1)] }}">
 								<img class="service_img"
@@ -131,8 +138,14 @@
 							</div>
 						</div>
 					@endforeach
-				@endif
-			</div>
+				</div>
+
+				<div id="customize-nav-service" class="tns-nav-circles position-absolute bottom">
+					@foreach(get_field('services') as $service)
+						<span></span>
+					@endforeach
+				</div>
+			@endif
 		</div>
 	@endif
 
@@ -192,18 +205,18 @@
 			</div>
 
 			@if(get_field('app_gallery'))
-				<div id="appCarousel" class="d-flex">
-					@foreach(get_field('app_gallery') as $appIamge)
+				<div id="appCarousel">
+					@foreach(get_field('app_gallery') as $appImage)
 						<div class="">
 							<img class="w-100 h-100"
-							     src="{{$appIamge}}"
+							     src="{{$appImage}}"
 							     alt=""/>
 						</div>
 					@endforeach
 
 				</div>
 				<div id="customize-nav-app" class="tns-nav-circles position-absolute bottom">
-					@foreach(get_field('app_gallery') as $appIamge)
+					@foreach(get_field('app_gallery') as $appImage)
 						<span></span>
 					@endforeach
 				</div>
@@ -219,16 +232,16 @@
 					<h2 class="title col-12 col-md-6 mt-0 mb-default">{{the_field('clients_title')}}</h2>
 				</div>
 			</div>
-			<div class="container position-relative pb-default-2 mb-default-2">
-				<div id="clientCarousel" class="row justify-content-between">
+			<div class="container position-relative mb-default-2">
+				<div id="clientCarousel" class="row justify-content-between pb-default-4 mb-default-2">
 					@foreach(get_field('clients') as $client)
-						<div class="col-12 mb-default mb-default-md">
+						<div>
 							<div class="card h-100 border-0 p-default text-center client">
-							<span class="client_container mx-auto border_image mb-default {{$client['border_color'] ? $client['border_color'] : $bgColors[rand(0, count($bgColors)-1)] }}">
-								<img class="client_img"
-								     src="{{$client['client_image']}}"
-								     alt=""/>
-							</span>
+													<span class="client_container mx-auto border_image mb-default {{$client['border_color'] ? $client['border_color'] : $bgColors[rand(0, count($bgColors)-1)] }}">
+														<img class="client_img"
+														     src="{{$client['client_image']}}"
+														     alt=""/>
+													</span>
 
 								<h4 class="client_quote mb-default">"{{$client['client_quote']}}"</h4>
 
@@ -241,7 +254,7 @@
 					@endforeach
 				</div>
 				<div id="customize-nav-clients" class="tns-nav-circles position-absolute bottom">
-					@foreach(get_field('clients') as $appIamge)
+					@foreach(get_field('clients') as $appImage)
 						<span></span>
 					@endforeach
 				</div>
@@ -250,24 +263,24 @@
 	@endif
 
 	@if(get_field('actual_title') && get_field('actual_cta_link'))
-		<div id="posts" class="container-fluid">
+		<div id="posts" class="container-fluid position-relative">
 			<div class="container">
 				<div class="row">
 					<h2 class="title col-12 col-md-6 mt-0 mb-default">{{the_field('actual_title')}}</h2>
 				</div>
 			</div>
 			@if(get_field('posts') == null && $posts->have_posts() && $posts->found_posts == 1)
-				<div class="container">
+				<div class="container position-relative">
 					@elseif(get_field('posts') != null && count(get_field('posts'))== 0)
-						<div class="container">
+						<div class="container position-relative">
 							@endif
 
-							<div class="row post justify-content-between mb-default-2">
-								@if(get_field('posts') == null && $posts->have_posts())
+							@if(get_field('posts') == null && $posts->have_posts())
+								<div id="actualContainer" class="row post justify-content-between position-relative">
 									@while(have_posts()) @php the_post() @endphp
 
 									@while($posts->have_posts()) @php($posts->the_post())
-									<div class="col-12 col-md-{{$posts->found_posts >= 3 ? '4' : ($posts->found_posts == 2 ?'6': '12')}}-default mb-default mb-default-md">
+									<div class="mb-default mb-default-md">
 										<div class="card border-0 {{$posts->found_posts != 1 ? 'mb-default' : null}} position-relative h-100">
 											<a href="{{ the_permalink() }}" class="d-block post_link h-100">
 												<img src="{{the_field('headerimage')}}" alt=""
@@ -287,10 +300,19 @@
 									@endwhile
 									@php(wp_reset_postdata())
 									@endwhile
-								@else
+								</div>
+
+								@php($total = $services->found_posts >= 3 ? 3 : $services->found_posts)
+								<div id="customize-nav-actual" class="tns-nav-circles position-absolute bottom">
+									@for($i = 0; $i < $total; $i++)
+										<span></span>
+									@endfor
+								</div>
+							@else
+								<div id="actualContainer" class="row justify-content-between position-relative">
 									@foreach(get_field('posts') as $singlePost)
 										@php( $postId = $singlePost['post']->ID)
-										<div class="col-12 col-md-{{$loop->count >= 3 ? '4' : ($loop->count == 2 ?'6': '12')}}-default mb-default mb-default-md">
+										<div class="mb-default mb-default-md">
 											<div class="card border-0 {{$loop->count != 1 ? 'mb-default' : null}} position-relative h-100">
 												<a href="{{ get_the_permalink($postId) }}"
 												   class="d-block post_link h-100">
@@ -307,8 +329,14 @@
 											</div>
 										</div>
 									@endforeach
-								@endif
-							</div>
+
+									<div id="customize-nav-actual" class="tns-nav-circles position-absolute bottom">
+										@foreach(get_field('posts') as $service)
+											<span></span>
+										@endforeach
+									</div>
+								</div>
+							@endif
 							@if(get_field('posts') == null && $posts->have_posts() && $posts->found_posts == 1)
 						</div>
 					@elseif(get_field('posts') != null && count(get_field('posts'))== 0)
