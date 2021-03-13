@@ -276,7 +276,8 @@
 							@endif
 
 							@if(get_field('posts') == null && $posts->have_posts())
-								<div id="actualContainer" class="row post justify-content-between position-relative">
+								<div id="actualContainer"
+								     class="row post justify-content-between position-relative mb-5">
 									@while(have_posts()) @php the_post() @endphp
 
 									@while($posts->have_posts()) @php($posts->the_post())
@@ -309,7 +310,7 @@
 									@endfor
 								</div>
 							@else
-								<div id="actualContainer" class="row justify-content-between position-relative">
+								<div id="actualContainer" class="row justify-content-between position-relative mb-5">
 									@foreach(get_field('posts') as $singlePost)
 										@php( $postId = $singlePost['post']->ID)
 										<div class="mb-default mb-default-md">
