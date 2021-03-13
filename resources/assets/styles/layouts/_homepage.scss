@@ -52,6 +52,12 @@
 	}
 }
 
+#usps {
+	.usps-item {
+		margin-bottom: $default_spacing;
+	}
+}
+
 #services {
 	.service {
 		&_container {

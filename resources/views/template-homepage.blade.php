@@ -48,17 +48,18 @@
 	</div>
 
 	@if(get_field('usps_title') && get_field('usps'))
-		<div class="container-fluid pb-default-2 mb-default-2 {{get_field('usps_bg_color') ? the_field('usps_bg_color') : 'bg-secondary'}}">
+		<div id="usps"
+		     class="container-fluid pb-default-2 mb-default-2 color-introduction {{get_field('usps_bg_color') ? the_field('usps_bg_color') : 'bg-secondary'}}">
 			<div class="container">
 				<div class="row">
-					<h2 class="title col-12 col-md-6 mb-default {{get_field('usps_bg_color') == 'bg-primary' ? 'text-light' :null}}">{{the_field('usps_title')}}</h2>
+					<h2 class="title col-12 col-md-6 mb-default {{get_field('usps_bg_color') == 'bg-secondary' ? 'text-dark' :'text-light'}}">{{the_field('usps_title')}}</h2>
 				</div>
 				@php $uspsCount = 1 @endphp
 				@foreach(get_field('usps') as $usp)
 					@if($uspsCount % 2 == 1)
 						<div class="row {{$uspsCount % 2 == 0 ? "mb-default" : null}}">
 							@endif
-							<div class="col-12 col-md-6 d-flex align-items-center {{$uspsCount % 2 != 0 ? "mb-default  mb-default-md" : null}}">
+							<div class="usps-item col-12 col-md-6 d-flex align-items-center {{$uspsCount % 2 != 0 ? "mb-default  mb-default-md" : null}}">
 								<img src="{{$usp['usp_icon']}}" alt=""
 								     style="width:20px; height:20px;" class="square"/>
 								<p class="ml-default {{get_field('usps_bg_color') == 'bg-primary' ? 'text-light' :null}}">{{$usp['usp_text']}}</p>
