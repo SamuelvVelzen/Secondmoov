@@ -9,10 +9,8 @@
 @endphp
 
 @section('content')
-	<div class="background medium {{get_field('bg_color') ? the_field('bg_color') : 'bg-secondary'}}"></div>
-	@if(get_field('intro_title') && get_field('intro_text') && get_field('intro_image'))
-		@include('components.introduction', ['title' => 'intro_title', 'text' => 'intro_text', 'image' => 'intro_image'])
-	@endif
+	@include('components.introduction', ['title' => 'intro_title', 'text' => 'intro_text', 'image' => 'intro_image', 'defaultColor' =>'bg-secondary'])
+
 	@php($members = get_field('member_teams'))
 	@if($members)
 		<div class="fluid-container position-relative mt-default-4">
