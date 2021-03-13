@@ -17,7 +17,7 @@
 				@foreach($infos as $info)
 					<div class="d-flex align-items-center info_container">
 						@if($info['type'] === "Whatsapp")
-							<img class="square" src="@asset('images/mail.png')" alt="">
+							<img class="square" src="@asset('images/whatsapp.png')" alt="">
 						@elseif($info['type'] === "Email")
 							<img class="square" src="@asset('images/mail.png')" alt="">
 						@elseif($info['type'] === "Telefoonnummer")

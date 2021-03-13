@@ -39,7 +39,7 @@
 									<div class="member_contact_info d-flex justify-content-center align-items-center mt-auto">
 										@if($contact['type'] === "Whatsapp")
 											<img class="square member_contact_info_img"
-											     src="@asset('images/mail.png')"
+											     src="@asset('images/whatsapp.png')"
 											     alt="">
 										@elseif($contact['type'] === "Email")
 											<img class="square member_contact_info_img"
