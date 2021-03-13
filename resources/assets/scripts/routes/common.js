@@ -66,35 +66,6 @@ export default {
             });
         }
 
-        if (document.getElementById('appCarousel')) {
-            tns({
-                container: '#appCarousel',
-                items: 2,
-                slideBy: 'page',
-                nav: true,
-                navContainer: '#customize-nav-app',
-                controls: false,
-                arrowKeys: false,
-                autoplay: true,
-                autoplayButtonOutput: false,
-                mouseDrag: true,
-                gutter: 20,
-                lazyload: true,
-                responsive: {
-                    0: {
-                        items: 1,
-                    },
-                    576: {
-                        items: 2,
-                    },
-                    992: {
-                        items: 3,
-                        gutter: 40,
-                    },
-                },
-            });
-        }
-
         if (document.getElementById('heroCarousel')) {
             tns({
                 container: '#heroCarousel',
@@ -140,6 +111,89 @@ export default {
             });
         }
 
+        if (document.getElementById('actualContainer')) {
+            tns({
+                container: '#actualContainer',
+                items: 2,
+                slideBy: 'page',
+                nav: true,
+                navContainer: '#customize-nav-actual',
+                controls: false,
+                arrowKeys: false,
+                autoplay: true,
+                autoplayButtonOutput: false,
+                mouseDrag: true,
+                gutter: 20,
+                lazyload: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                    },
+                    576: {
+                        items: 2,
+                    },
+                    992: {
+                        items: 3,
+                        gutter: 40,
+                    },
+                },
+            });
+        }
+
+        if (document.getElementById('serviceContainer')) {
+            tns({
+                container: '#serviceContainer',
+                items: 2,
+                slideBy: 'page',
+                nav: true,
+                navContainer: '#customize-nav-service',
+                controls: false,
+                arrowKeys: false,
+                autoplay: true,
+                autoplayButtonOutput: false,
+                mouseDrag: true,
+                gutter: 20,
+                lazyload: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                    },
+                    576: {
+                        items: 2,
+                    },
+                    992: {
+                        items: 3,
+                        gutter: 40,
+                    },
+                },
+            });
+        }
+
+        if (document.getElementById('appCarousel')) {
+            tns({
+                container: '#appCarousel',
+                items: 2,
+                slideBy: 'page',
+                nav: true,
+                navContainer: '#customize-nav-app',
+                controls: false,
+                arrowKeys: false,
+                autoplay: true,
+                autoplayButtonOutput: false,
+                mouseDrag: true,
+                gutter: 20,
+                lazyload: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                    },
+                    576: {
+                        items: 2,
+                    },
+                },
+            });
+        }
+
 
         document.getElementById('mobileButton').addEventListener('click', function () {
             document.getElementsByTagName('body')[0].classList.toggle('mobile_menu');
@@ -151,4 +205,4 @@ export default {
             }
         })
     },
-};
+}
