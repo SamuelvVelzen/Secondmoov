@@ -329,12 +329,12 @@
 											</div>
 										</div>
 									@endforeach
+								</div>
 
-									<div id="customize-nav-actual" class="tns-nav-circles position-absolute bottom">
-										@foreach(get_field('posts') as $service)
-											<span></span>
-										@endforeach
-									</div>
+								<div id="customize-nav-actual" class="tns-nav-circles position-absolute bottom">
+									@foreach(get_field('posts') as $service)
+										<span></span>
+									@endforeach
 								</div>
 							@endif
 							@if(get_field('posts') == null && $posts->have_posts() && $posts->found_posts == 1)
