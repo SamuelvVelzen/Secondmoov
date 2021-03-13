@@ -1,15 +1,18 @@
 #footer {
 	margin-top: $default_spacing4;
 
-	#partnerCarousel {
-		padding: 0 $default_spacing $default_spacing $default_spacing;
+	.container-fluid {
 		border-bottom: 1px solid;
 		@include half-opacity($dark);
 
-		img {
-			height: 100px;
-			object-position: center;
-			object-fit: contain;
+		#partnerCarousel {
+			padding-bottom: $default_spacing;
+
+			img {
+				height: 100px;
+				object-position: center;
+				object-fit: contain;
+			}
 		}
 	}
 
