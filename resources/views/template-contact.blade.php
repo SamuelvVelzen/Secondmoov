@@ -7,7 +7,9 @@
 @section('content')
 	<div class="background {{get_field('bg_color') ? the_field('bg_color') : 'bg-primary'}}"></div>
 	<div class="container">
-		<h2 class="title mb-0 text-light col-12 col-md-6">{{the_field('container_title')}}</h2>
+		<div class="row">
+			<h2 class="title mb-0 text-light col-12 col-md-6">{{the_field('container_title')}}</h2>
+		</div>
 		<div class="row">
 			<div class="col-12 col-md-5">
 				<h4 class="subtitle text-light col-12">{{the_field('container_subtitle')}}</h4>
