@@ -132,3 +132,7 @@ img:not(.square) {
 
 	@extend .squircles;
 }
+
+.color-introduction {
+	border-radius: 0 0 $squircle $squircle;
+}
