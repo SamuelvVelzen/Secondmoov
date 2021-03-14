@@ -1,12 +1,29 @@
-.info_container {
-	margin: $default_spacing2 0;
+.container-text {
+	@include breakpoint-md-big {
+		height: 700px;
+	}
 
-	img {
-		height: 50px;
-		width: auto;
+	.info_container {
+		margin: $default_spacing2 0;
+
+		img {
+			height: 50px;
+			width: auto;
+		}
+	}
+
+	.info_content {
+		margin-left: $default_spacing2;
 	}
 }
 
-.info_content {
-	margin-left: $default_spacing2;
+.container-form {
+	@include breakpoint-md-big {
+		position: absolute;
+		top: -40px;
+
+		.form {
+			padding-top: 60px;
+		}
+	}
 }

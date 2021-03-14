@@ -15,8 +15,8 @@
 				<img class="contact_container_logo square" src="@asset('images/phone.png')">
 				<a class="contact_container_link d-flex flex-column text-decoration-none"
 				   href="tel:{{the_sub_field('info')}}">
-					<p class="d-none d-md-block">Heb je een vraag?</p>
-					<p><b class="d-block d-md-inline-block">Bel ons <span class="d-none d-md-inline-block">•</span>
+					<p class="d-none d-lg-block">Heb je een vraag?</p>
+					<p><b class="d-block d-lg-inline-block">Bel ons <span class="d-none d-lg-inline-block">•</span>
 						</b> {{the_sub_field('info')}}</p>
 				</a>
 			</div>
@@ -34,10 +34,12 @@
 				@php($pageID = get_sub_field('link', false, false))
 				@php($i++)
 				@if($i == 2)
-					<div class="w-100 d-md-flex d-none align-items-center">
+					<div class="w-100 d-lg-flex d-none align-items-center">
 						@endif
+
 						<li class="navbar_group_item {{$i == 1 ? 'first' : null}}">
-							<a class="navbar_group_item_link" href="{{get_the_permalink($pageID)}}">
+							<a class="navbar_group_item_link {{is_page($pageID) ? 'active' : null}}"
+							   href="{{get_the_permalink($pageID)}}">
 								{{get_the_title($pageID)}}
 							</a>
 						</li>
@@ -52,7 +54,7 @@
 					</div>
 
 					<div id="mobileButton" class="ml-auto">
-						<div class="d-block d-md-none mobileButton">
+						<div class="d-block d-lg-none mobileButton">
 							<span></span>
 							<span></span>
 							<span></span>
@@ -70,7 +72,8 @@
 		@while(have_rows('menu','option'))
 			@php(the_row())
 			@php($pageID = get_sub_field('link', false, false))
-			<a class="navbar_group_item_link" href="{{get_the_permalink($pageID)}}">
+			<a class="navbar_group_item_link {{is_page($pageID) ? 'active' : null}}"
+			   href="{{get_the_permalink($pageID)}}">
 				<h3>{{get_the_title($pageID)}}</h3>
 			</a>
 		@endwhile
