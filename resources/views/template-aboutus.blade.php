@@ -9,10 +9,8 @@
 @endphp
 
 @section('content')
-	<div class="background medium {{get_field('bg_color') ? the_field('bg_color') : 'bg-secondary'}}"></div>
-	@if(get_field('intro_title') && get_field('intro_text') && get_field('intro_image'))
-		@include('components.introduction', ['title' => 'intro_title', 'text' => 'intro_text', 'image' => 'intro_image'])
-	@endif
+	@include('components.introduction', ['title' => 'intro_title', 'text' => 'intro_text', 'image' => 'intro_image', 'defaultColor' =>'bg-secondary'])
+
 	@php($members = get_field('member_teams'))
 	@if($members)
 		<div class="fluid-container position-relative mt-default-4">
@@ -36,24 +34,34 @@
 								<p class="member_text">{{$member['text']}}</p>
 
 								@foreach($member['contact_information'] as $contact)
-									<div class="member_contact_info d-flex justify-content-center align-items-center mt-auto">
-										@if($contact['type'] === "Whatsapp")
-											<img class="square member_contact_info_img"
-											     src="@asset('images/mail.png')"
-											     alt="">
-										@elseif($contact['type'] === "Email")
-											<img class="square member_contact_info_img"
-											     src="@asset('images/mail.png')"
-											     alt="">
-										@elseif($contact['type'] === "Telefoonnummer")
-											<img class="square member_contact_info_img"
-											     src="@asset('images/phone.png')"
-											     alt="">
-										@else
-											<img class="square member_contact_info_img"
-											     src="@asset('images/letter.png')" alt="">
+									<div class="member_contact_info d-flex justify-content-center align-items-center mt-auto flex-wrap">
+										@if($contact['type'] === "Email" || $contact['type'] === "Telefoonnummer")
+											<a href="{{$contact['type'] === "Email" ? 'mailto' : ($contact['type'] === "Telefoonnummer" ?'tel' : '')}}:{{$contact['text']}}"
+											   class="d-flex justify-content-center align-items-center mt-auto text-decoration-none flex-wrap">
+												@endif
+
+												@if($contact['type'] === "Whatsapp")
+													<img class="square member_contact_info_img"
+													     src="@asset('images/whatsapp.png')"
+													     alt="">
+												@elseif($contact['type'] === "Email")
+													<img class="square member_contact_info_img"
+													     src="@asset('images/mail.png')"
+													     alt="">
+												@elseif($contact['type'] === "Telefoonnummer")
+													<img class="square member_contact_info_img"
+													     src="@asset('images/phone.png')"
+													     alt="">
+												@else
+													<img class="square member_contact_info_img"
+													     src="@asset('images/letter.png')"
+													     alt="">
+												@endif
+												<span>{{$contact['text']}}</span>
+
+												@if($contact['type'] === "Email" || $contact['type'] === "Telefoonnummer")
+											</a>
 										@endif
-										<p>{{$contact['text']}}</p>
 									</div>
 								@endforeach
 							</div>

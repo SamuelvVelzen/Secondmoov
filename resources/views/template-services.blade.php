@@ -10,8 +10,7 @@
 @endphp
 
 @section('content')
-	<div class="background small {{get_field('bg_color') ? the_field('bg_color') : 'bg-secondary'}}"></div>
-	@include('components.introduction', ['title' => 'intro_title', 'text' => 'intro_text', 'image' => 'intro_image'])
+	@include('components.introduction', ['title' => 'intro_title', 'text' => 'intro_text', 'image' => 'intro_image', 'defaultColor' =>'bg-secondary'])
 
 	@if($query->have_posts())
 		@while(have_posts()) @php the_post() @endphp

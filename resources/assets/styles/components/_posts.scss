@@ -48,6 +48,11 @@
 			border-radius: 0 $squircle $squircle $squircle;
 			bottom: -30%;
 
+			@include breakpoint-md {
+				max-width: 100%;
+				width: 100%;
+			}
+
 			a {
 				text-decoration: none;
 			}

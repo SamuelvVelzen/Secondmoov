@@ -52,6 +52,12 @@
 	}
 }
 
+#usps {
+	.usps-item {
+		margin-bottom: $default_spacing;
+	}
+}
+
 #services {
 	.service {
 		&_container {
@@ -157,6 +163,7 @@
 		&_image {
 			object-fit: cover;
 			object-position: center;
+			min-height: 300px;
 		}
 
 		&_content {
