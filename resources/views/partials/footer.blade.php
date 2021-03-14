@@ -62,19 +62,19 @@
 										@endif
 
 										@if(get_sub_field('type') === "Whatsapp")
-											<img class="square member_contact_info_img"
+											<img class="square contact_container_img"
 											     src="@asset('images/whatsapp.png')"
 											     alt="">
 										@elseif(get_sub_field('type') === "Email")
-											<img class="square member_contact_info_img"
+											<img class="square contact_container_img"
 											     src="@asset('images/mail.png')"
 											     alt="">
 										@elseif(get_sub_field('type') === "Telefoonnummer")
-											<img class="square member_contact_info_img"
+											<img class="square contact_container_img"
 											     src="@asset('images/phone.png')"
 											     alt="">
 										@else
-											<img class="square member_contact_info_img"
+											<img class="square contact_container_img"
 											     src="@asset('images/letter.png')"
 											     alt="">
 										@endif
