@@ -1,3 +1,19 @@
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p {
+	margin: 0;
+}
+
+.title {
+	margin: $default-spacing2 0;
+
+	@include breakpoint-md {
+		margin: $default-spacing 0;
+	}
+}
+
+.subtitle {
+	margin: $default-spacing 0;
+}
+
 .text-content {
 	line-height: 30px;
 
