@@ -1,3 +1,7 @@
+.card {
+	background-color: $light;
+}
+
 .posts {
 	&:not(:last-of-type) {
 		@include breakpoint-md {
@@ -6,9 +10,9 @@
 	}
 
 	&:last-of-type {
-		margin-bottom: $default_spacing2;
+		padding-bottom: $default_spacing2;
 		@include breakpoint-md {
-			margin-bottom: $default_spacing4;
+			padding-bottom: $default_spacing4;
 		}
 	}
 
@@ -41,7 +45,7 @@
 
 		.content {
 			cursor: pointer;
-			background-color: $white;
+			background-color: $light;
 			max-width: 80%;
 			width: 80%;
 			padding: $default_spacing;

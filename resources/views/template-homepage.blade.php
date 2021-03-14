@@ -294,7 +294,7 @@
 														@php($result = str_replace(get_the_time('F'), $months[get_the_time('n')-1], get_the_time('d F Y')))
 														{{$result}}
 													</p>
-													<h2>{{the_field('short_title')}}</h2>
+													<h4>{{the_field('short_title')}}</h4>
 												</div>
 											</a>
 										</div>
@@ -326,7 +326,7 @@
 														@php($result = str_replace(get_the_time('F',$postId), $months[get_the_time('n',$postId)-1], get_the_time('d F Y',$postId)))
 														{{$result}}
 													</p>
-													<h2>{{the_field('short_title', $postId)}}</h2>
+													<h4>{{the_field('short_title', $postId)}}</h4>
 												</div>
 											</div>
 										</div>
