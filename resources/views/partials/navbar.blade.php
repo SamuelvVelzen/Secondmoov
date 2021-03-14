@@ -15,8 +15,8 @@
 				<img class="contact_container_logo square" src="@asset('images/phone.png')">
 				<a class="contact_container_link d-flex flex-column text-decoration-none"
 				   href="tel:{{the_sub_field('info')}}">
-					<p class="d-none d-lg-block">Heb je een vraag?</p>
-					<p><b class="d-block d-lg-inline-block">Bel ons <span class="d-none d-lg-inline-block">•</span>
+					<p class="d-none d-sm-block">Heb je een vraag?</p>
+					<p><b class="d-block d-sm-inline-block">Bel ons <span class="d-none d-sm-inline-block">•</span>
 						</b> {{the_sub_field('info')}}</p>
 				</a>
 			</div>
