@@ -1,0 +1,47 @@
+.squircles {
+	border-radius: $squircle;
+}
+
+.color-introduction {
+	border-radius: 0 0 $squircle $squircle;
+}
+
+.background {
+	position: absolute;
+	height: 326px;
+	width: 100%;
+	border-radius: 0 0 $squircle $squircle;
+	z-index: -1;
+
+	@include breakpoint-lg {
+		height: 275px;
+	}
+
+	@include breakpoint-md {
+		height: 250px;
+	}
+
+	&.medium {
+		height: 250px;
+
+		@include breakpoint-lg {
+			height: 225px;
+		}
+
+		@include breakpoint-md {
+			height: 175px;
+		}
+	}
+
+	&.small {
+		height: 200px;
+
+		@include breakpoint-lg {
+			height: 280px;
+		}
+
+		@include breakpoint-md {
+			height: 200px;
+		}
+	}
+}

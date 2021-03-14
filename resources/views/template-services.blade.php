@@ -21,7 +21,7 @@
 				</div>
 			</div>
 			@while($query->have_posts()) @php($query->the_post())
-			<div class="row mb-default-2">
+			<div class="row pb-default-2">
 				<div class="service_image col-12 col-md-4 justify-content-center d-flex icon-img">
 						<span class="border_image {{get_field('border_color') ? the_field('border_color') : $bgColors[rand(0, count($bgColors) - 1)] }}">
 						<img class="service_img"

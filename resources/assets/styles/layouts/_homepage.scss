@@ -82,10 +82,9 @@
 #datablocks {
 	@include breakpoint-md-big {
 		background: $primary; //fallback
-		background: -moz-linear-gradient(left, $primary 0, $primary 33%, $white 33%, $white 100%);
-		background: -webkit-linear-gradient(left, $primary 0, $primary 33%, $white 33%, $white 100%);
-		background: linear-gradient(to right, $primary 0, $primary 33%, $white 33%, $white 100%);
-
+		background: -moz-linear-gradient(left, $primary 0, $primary 33%, $light 33%, $light 100%);
+		background: -webkit-linear-gradient(left, $primary 0, $primary 33%, $light 33%, $light 100%);
+		background: linear-gradient(to right, $primary 0, $primary 33%, $light 33%, $light 100%);
 	}
 
 	.datablocks {
@@ -143,8 +142,9 @@
 #clients {
 	.client {
 		box-shadow: 0px 25px 25px rgba(65, 65, 65, 0.5);
+		background-color: $white;
 
-		&_container {
+		& _container {
 			width: 175px;
 			height: 175px;
 		}

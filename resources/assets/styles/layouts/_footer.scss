@@ -1,7 +1,7 @@
 #footer {
-	margin-top: $default_spacing4;
-
 	.container-fluid {
+		padding-top: $default_spacing4;
+		background-color: $light;
 		border-bottom: 1px solid;
 		@include half-opacity($dark);
 

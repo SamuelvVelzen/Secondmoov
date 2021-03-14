@@ -1,3 +1,7 @@
+img:not(.square) {
+	border-radius: $squircle;
+}
+
 .border_image {
 	display: flex;
 	align-items: center;
