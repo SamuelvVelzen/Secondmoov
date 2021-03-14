@@ -23,7 +23,7 @@
 			width: auto;
 			margin-right: $default_spacing;
 
-			@include breakpoint-md {
+			@include breakpoint-lg {
 				margin-right: $default_spacing /2;
 				margin-left: $default_spacing /2;
 			}
@@ -59,6 +59,10 @@
 					font-weight: bold;
 					color: $black;
 					text-decoration: none;
+
+					&.active {
+						color: $primary;
+					}
 				}
 			}
 
@@ -131,10 +135,16 @@
 		transform: translateX(100%);
 
 		.navbar_group_item_link {
+			text-decoration: none;
+
 			h3 {
 				margin-top: $default_spacing;
 				font-weight: bold;
 				color: $black;
+			}
+
+			&.active h3 {
+				color: $primary;
 			}
 
 			&:first-of-type h3 {
