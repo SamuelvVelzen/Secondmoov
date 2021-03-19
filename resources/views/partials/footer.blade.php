@@ -17,7 +17,7 @@
 			<div class="row">
 				<div class="service_social col-12 col-sm-6 col-md-4">
 					@if (have_rows('service','option'))
-						<div class="services col-12">
+						<div class="services col-12 d-flex d-sm-block justify-content-center">
 							@php($count = 0)
 							@while(have_rows('service','option')) @php(the_row())
 							@php($pageID = get_sub_field('link', false, false))
@@ -32,7 +32,7 @@
 					@endif
 
 					@if (have_rows('social','option'))
-						<div class="socials col-12 order-0 ">
+						<div class="socials col-12 order-0 d-flex d-sm-block justify-content-center">
 							@while(have_rows('social','option')) @php(the_row())
 							<a class="socials_link" href="{{the_sub_field('url')}}">
 								<img loading="lazy" class="socials_img square" src="{{the_sub_field('image')}}" alt="">

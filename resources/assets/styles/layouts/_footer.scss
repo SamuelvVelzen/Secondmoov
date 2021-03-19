@@ -76,6 +76,10 @@
 				display: flex;
 				align-items: center;
 				text-decoration: none;
+
+				@include breakpoint-sm {
+					justify-content: center;
+				}
 			}
 
 			&_img {
