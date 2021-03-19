@@ -24,7 +24,7 @@
 						<div>
 							<div class="card text-center team_member h-100">
 								<span class="member_image mx-auto border_image {{$member['border_color'] != "" ? $member['border_color'] : $bgColors[rand(0, count($bgColors) - 1)] }}">
-								<img class="member_image_img"
+								<img loading="lazy" class="member_image_img"
 								     src="{{$member['image']}}"
 								     alt="">
 							</span>
@@ -41,19 +41,19 @@
 												@endif
 
 												@if($contact['type'] === "Whatsapp")
-													<img class="square member_contact_info_img"
+													<img loading="lazy" class="square member_contact_info_img"
 													     src="@asset('images/whatsapp.png')"
 													     alt="">
 												@elseif($contact['type'] === "Email")
-													<img class="square member_contact_info_img"
+													<img loading="lazy" class="square member_contact_info_img"
 													     src="@asset('images/mail.png')"
 													     alt="">
 												@elseif($contact['type'] === "Telefoonnummer")
-													<img class="square member_contact_info_img"
+													<img loading="lazy" class="square member_contact_info_img"
 													     src="@asset('images/phone.png')"
 													     alt="">
 												@else
-													<img class="square member_contact_info_img"
+													<img loading="lazy" class="square member_contact_info_img"
 													     src="@asset('images/letter.png')"
 													     alt="">
 												@endif

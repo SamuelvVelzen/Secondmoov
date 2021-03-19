@@ -23,13 +23,13 @@
 				@foreach($infos as $info)
 					<div class="d-flex align-items-center info_container">
 						@if($info['type'] === "Whatsapp")
-							<img class="square" src="@asset('images/whatsapp.png')" alt="">
+							<img loading="lazy" class="square" src="@asset('images/whatsapp.png')" alt="">
 						@elseif($info['type'] === "Email")
-							<img class="square" src="@asset('images/mail.png')" alt="">
+							<img loading="lazy" class="square" src="@asset('images/mail.png')" alt="">
 						@elseif($info['type'] === "Telefoonnummer")
-							<img class="square" src="@asset('images/phone.png')" alt="">
+							<img loading="lazy" class="square" src="@asset('images/phone.png')" alt="">
 						@else
-							<img class="square" src="@asset('images/letter.png')" alt="">
+							<img loading="lazy" class="square" src="@asset('images/letter.png')" alt="">
 						@endif
 
 						<div class="d-flex flex-column font-weight-bold info_content">

@@ -27,7 +27,8 @@
 					<div class="post col-12 col-md-5 {{ $i % 2 === 0 ? 'offset-md-2' : '' }}">
 						<div class="position-relative">
 							<a href="{{ the_permalink() }}" class="d-block">
-								<img src="{{the_field('headerimage')}}" alt="" class="w-100">
+								<img {{$i > 4 ? 'loading="lazy"' : null}} src="{{the_field('headerimage')}}" alt=""
+								     class="w-100">
 							</a>
 							<a href="{{ the_permalink() }}">
 								<div class="content position-absolute">
