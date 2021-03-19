@@ -49,7 +49,7 @@
 
 	@if(get_field('usps_title') && get_field('usps'))
 		<div id="usps"
-		     class="container-fluid pb-default-2 mb-default-2 color-introduction {{get_field('usps_bg_color') ? the_field('usps_bg_color') : 'bg-secondary'}}">
+		     class="container-fluid pb-default mb-default-2 color-introduction {{get_field('usps_bg_color') ? the_field('usps_bg_color') : 'bg-secondary'}}">
 			<div class="container">
 				<div class="row">
 					<h2 class="title col-12 col-md-6 mb-default {{get_field('usps_bg_color') == 'bg-secondary' ? 'text-dark' :'text-light'}}">{{the_field('usps_title')}}</h2>
@@ -59,8 +59,8 @@
 					@if($uspsCount % 2 == 1)
 						<div class="row {{$uspsCount % 2 == 0 ? "mb-default" : null}}">
 							@endif
-							<div class="usps-item col-12 col-md-6 d-flex align-items-center {{$uspsCount % 2 != 0 ? "mb-default  mb-default-md" : null}}">
-								<img src="{{$usp['usp_icon']}}" alt=""
+							<div class="usps-item col-12 col-md-6 d-flex align-items-center">
+								<img loading="lazy" src="{{$usp['usp_icon']}}" alt=""
 								     style="width:20px; height:20px;" class="square"/>
 								<p class="ml-default {{get_field('usps_bg_color') == 'bg-primary' ? 'text-light' :null}}">{{$usp['usp_text']}}</p>
 							</div>
@@ -81,7 +81,7 @@
 				<h2 class="title col-12 col-md-6 mt-0 mb-default">{{the_field('services_title')}}</h2>
 			</div>
 			@if(get_field('services') == null && $services->have_posts())
-				<div id="serviceContainer" class="row justify-content-between position-relative mb-4">
+				<div id="serviceContainer" class="row justify-content-between position-relative">
 					@while(have_posts()) @php the_post() @endphp
 					@php $serviceCount = 0 @endphp
 					@while($services->have_posts())
@@ -89,7 +89,8 @@
 						<div class="mb-default mb-default-md">
 							<div class="p-default text-center service">
 							<span class="service_container mx-auto border_image mb-default {{get_field('border_color') ? the_field('border_color') : $bgColors[rand(0, count($bgColors)-1)] }}">
-								<img class="service_img"
+								<img loading="lazy"
+								     class="service_img"
 								     src="{{the_field('image')}}"
 								     alt=""/>
 							</span>
@@ -116,13 +117,14 @@
 					@endfor
 				</div>
 			@else
-				<div id="serviceContainer" class="row justify-content-between position-relative mb-4">
+				<div id="serviceContainer" class="row justify-content-between position-relative">
 					@foreach(get_field('services') as $service)
 						@php $id = $service['service']->ID @endphp
 						<div class="mb-default mb-default-md">
 							<div class="p-default text-center service">
 							<span class="service_container mx-auto border_image mb-default {{get_field('border_color', $id) ? the_field('border_color', $id) : $bgColors[rand(0, count($bgColors)-1)] }}">
-								<img class="service_img"
+								<img loading="lazy"
+								     class="service_img"
 								     src="{{the_field('image', $id)}}"
 								     alt=""/>
 							</span>
@@ -209,7 +211,7 @@
 				<div id="appCarousel">
 					@foreach(get_field('app_gallery') as $appImage)
 						<div class="">
-							<img class="w-100 h-100"
+							<img loading="lazy" class="w-100 h-100"
 							     src="{{$appImage}}"
 							     alt=""/>
 						</div>
@@ -239,7 +241,7 @@
 						<div>
 							<div class="card h-100 border-0 p-default text-center client">
 													<span class="client_container mx-auto border_image mb-default {{$client['border_color'] ? $client['border_color'] : $bgColors[rand(0, count($bgColors)-1)] }}">
-														<img class="client_img"
+														<img loading="lazy" class="client_img"
 														     src="{{$client['client_image']}}"
 														     alt=""/>
 													</span>
@@ -285,7 +287,7 @@
 									<div class="mb-default mb-default-md">
 										<div class="card border-0 {{$posts->found_posts != 1 ? 'mb-default' : null}} position-relative h-100">
 											<a href="{{ the_permalink() }}" class="d-block post_link h-100">
-												<img src="{{the_field('headerimage')}}" alt=""
+												<img loading="lazy" src="{{the_field('headerimage')}}" alt=""
 												     class="w-100 post_image h-100">
 											</a>
 											<a href="{{ the_permalink() }}">
@@ -318,7 +320,8 @@
 											<div class="card border-0 {{$loop->count != 1 ? 'mb-default' : null}} position-relative h-100">
 												<a href="{{ get_the_permalink($postId) }}"
 												   class="d-block post_link h-100">
-													<img src="{{the_field('headerimage', $postId)}}" alt=""
+													<img loading="lazy" src="{{the_field('headerimage', $postId)}}"
+													     alt=""
 													     class="w-100 post_image h-100">
 												</a>
 												<div class="post_content position-absolute bg-white w-100 fixed-bottom p-default squircles">

@@ -18,7 +18,7 @@
 					<div class="post col-12 col-md-5 {{ $i % 2 === 0 ? 'offset-md-2' : '' }}">
 						<div class="position-relative">
 							<a href="{{ get_the_permalink($postId) }}" class="d-block post_link h-100">
-								<img src="{{the_field('headerimage', $postId)}}" alt=""
+								<img loading="lazy" src="{{the_field('headerimage', $postId)}}" alt=""
 								     class="w-100">
 							</a>
 							<a href="{{ get_the_permalink($postId) }}">
@@ -38,7 +38,7 @@
 				<div class="post col-12 col-md-5">
 					<div class="position-relative">
 						<a href="{{ get_the_permalink($postId) }}" class="d-block post_link h-100">
-							<img src="{{the_field('headerimage', $postId)}}" alt=""
+							<img loading="lazy" src="{{the_field('headerimage', $postId)}}" alt=""
 							     class="w-100">
 						</a>
 						<a href="{{ get_the_permalink($postId) }}">
@@ -62,7 +62,7 @@
 						<div class="post col-12 col-md-5 offset-md-2">
 							<div class="position-relative">
 								<a href="{{ the_permalink() }}" class="d-block">
-									<img src="{{the_field('headerimage')}}" alt="" class="w-100">
+									<img loading="lazy" src="{{the_field('headerimage')}}" alt="" class="w-100">
 								</a>
 								<a href="{{ the_permalink() }}">
 									<div class="content position-absolute">
@@ -91,7 +91,7 @@
 				<div class="post col-12 col-md-5 {{ $i % 2 === 0 ? 'offset-md-2' : '' }}">
 					<div class="position-relative">
 						<a href="{{ the_permalink() }}" class="d-block">
-							<img src="{{the_field('headerimage')}}" alt="" class="w-100">
+							<img loading="lazy" src="{{the_field('headerimage')}}" alt="" class="w-100">
 						</a>
 						<a href="{{ the_permalink() }}">
 							<div class="content position-absolute">
