@@ -81,7 +81,7 @@
 				<h2 class="title col-12 col-md-6 mt-0 mb-default">{{the_field('services_title')}}</h2>
 			</div>
 			@if(get_field('services') == null && $services->have_posts())
-				<div id="serviceContainer" class="row justify-content-between position-relative mb-4">
+				<div id="serviceContainer" class="row justify-content-between position-relative">
 					@while(have_posts()) @php the_post() @endphp
 					@php $serviceCount = 0 @endphp
 					@while($services->have_posts())
@@ -117,7 +117,7 @@
 					@endfor
 				</div>
 			@else
-				<div id="serviceContainer" class="row justify-content-between position-relative mb-4">
+				<div id="serviceContainer" class="row justify-content-between position-relative">
 					@foreach(get_field('services') as $service)
 						@php $id = $service['service']->ID @endphp
 						<div class="mb-default mb-default-md">
