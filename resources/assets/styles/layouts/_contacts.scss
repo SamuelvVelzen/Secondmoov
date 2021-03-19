@@ -8,7 +8,9 @@
 
 		img {
 			height: 50px;
-			width: auto;
+			width: 50px;
+			object-fit: contain;
+			object-position: center;
 		}
 	}
 
