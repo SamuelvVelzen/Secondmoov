@@ -4,7 +4,7 @@
 
 <div class="container p-default px-0">
 	<div class="row">
-		<img src="{{the_field('headerimage')}}" alt="" class="w-100">
+		<img src="{{the_field('headerimage')}}" alt="" class="w-100 h-100">
 	</div>
 </div>
 <div class="d-flex container align-items-center">
