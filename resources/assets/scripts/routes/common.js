@@ -10,7 +10,7 @@ export default {
         if (document.getElementById('partnerCarousel')) {
             tns({
                 container: '#partnerCarousel',
-                items: 3,
+                items: 1,
                 slideBy: 'page',
                 nav: false,
                 controls: false,
