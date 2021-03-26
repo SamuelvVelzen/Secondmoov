@@ -45,15 +45,16 @@
 
 	@if(get_field('usps_title') && get_field('usps'))
 		<div id="usps"
-		     class="container-fluid pb-default mb-default-2 color-introduction {{get_field('usps_bg_color') ? the_field('usps_bg_color') : 'bg-secondary'}}">
+		     class="container-fluid pb-default mb-default color-introduction {{get_field('usps_bg_color') ? the_field('usps_bg_color') : 'bg-secondary'}}">
 			<div class="container">
 				<div class="row">
 					<h2 class="title col-12 col-md-6 mb-default {{get_field('usps_bg_color') == 'bg-secondary' ? 'text-dark' :'text-light'}}">{{the_field('usps_title')}}</h2>
 				</div>
 				@php $uspsCount = 1 @endphp
 				@foreach(get_field('usps') as $usp)
+					{{--					{{$uspsCount}}--}}
 					@if($uspsCount % 2 == 1)
-						<div class="row {{$uspsCount % 2 == 0 ? "mb-default" : null}}">
+						<div class="row mb-default">
 							@endif
 							<div class="usps-item col-12 col-md-6 d-flex align-items-center {{$uspsCount % 2 != 0 ? "mb-default  mb-default-md" : null}}">
 								{!! wp_get_attachment_image( $usp['usp_icon'], 'full', true,['class'=> 'square']) !!}
