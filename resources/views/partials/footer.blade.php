@@ -34,7 +34,7 @@
 					@if (have_rows('social','option'))
 						<div class="socials col-12 order-0 d-flex d-sm-block justify-content-center">
 							@while(have_rows('social','option')) @php(the_row())
-							<a class="socials_link" href="{{the_sub_field('url')}}">
+							<a class="socials_link" target="_blank" href="{{the_sub_field('url')}}">
 								<img loading="lazy" class="socials_img square" src="{{the_sub_field('image')}}" alt="">
 							</a>
 							@endwhile
