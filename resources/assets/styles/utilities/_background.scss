@@ -11,7 +11,7 @@
 	height: 326px;
 	width: 100%;
 	border-radius: 0 0 $squircle $squircle;
-	z-index: -1;
+	z-index: 0;
 
 	@include breakpoint-lg {
 		height: 275px;

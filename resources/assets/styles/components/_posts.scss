@@ -17,6 +17,7 @@
 		max-height: 50vh;
 		object-fit: cover;
 		object-position: center;
+		z-index: 0;
 	}
 }
 
@@ -63,7 +64,7 @@
 
 		.content {
 			cursor: pointer;
-			background-color: $light;
+			background-color: $white;
 			max-width: 80%;
 			width: 80%;
 			padding: $default_spacing;
