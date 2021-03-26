@@ -3,7 +3,7 @@
 		<a class="nav_brand" href="{{ home_url('/') }}">
 			{{the_field('logo')}}
 			@if(get_field('logo', 'option'))
-				<img class="nav_brand_logo" src="{{the_field('logo', 'option')}}">
+				{!! wp_get_attachment_image( get_field('logo','option'), 'full', true,['class'=> 'nav_brand_logo']) !!}
 			@else
 				<img class="nav_brand_logo" src="@asset('images/logo.png')">
 			@endif

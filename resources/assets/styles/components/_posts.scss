@@ -2,6 +2,24 @@
 	background-color: $light;
 }
 
+.post {
+	.border_image.border_image_small {
+		height: 50px;
+		width: 50px;
+
+		img {
+			height: 40px;
+			width: 40px;
+		}
+	}
+
+	.postHeroImage {
+		max-height: 50vh;
+		object-fit: cover;
+		object-position: center;
+	}
+}
+
 .posts {
 	&:not(:last-of-type) {
 		@include breakpoint-md {

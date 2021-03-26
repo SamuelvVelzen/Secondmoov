@@ -1,3 +1,3 @@
 <div class="container mb-default mx-auto">
-	<img loading="lazy" src="{{the_sub_field('image')}}" alt="" class="w-100">
+	{!! wp_get_attachment_image( get_sub_field('image'), 'full', false,['class'=> 'w-100 h-auto'] ) !!}
 </div>
