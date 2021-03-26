@@ -11,6 +11,6 @@
 			{!! the_field($text) !!}
 		</div>
 
-		<img class="logo col-12 col-md-5 offset-md-1" src="{{the_field($image)}}">
+		{!! wp_get_attachment_image( get_field($image), 'full', false,['class'=> 'logo col-12 col-md-5 offset-md-1 h-auto w-100'] ) !!}
 	</div>
 </div>

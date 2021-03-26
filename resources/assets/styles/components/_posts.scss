@@ -2,6 +2,25 @@
 	background-color: $light;
 }
 
+.post {
+	.border_image.border_image_small {
+		height: 50px;
+		width: 50px;
+
+		img {
+			height: 40px;
+			width: 40px;
+		}
+	}
+
+	.postHeroImage {
+		max-height: 50vh;
+		object-fit: cover;
+		object-position: center;
+		z-index: 0;
+	}
+}
+
 .posts {
 	&:not(:last-of-type) {
 		@include breakpoint-md {
@@ -45,7 +64,7 @@
 
 		.content {
 			cursor: pointer;
-			background-color: $light;
+			background-color: $white;
 			max-width: 80%;
 			width: 80%;
 			padding: $default_spacing;

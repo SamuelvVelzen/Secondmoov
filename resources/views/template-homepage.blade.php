@@ -30,11 +30,7 @@
 			<div id="heroCarousel" class="h-100 d-flex">
 				@foreach(get_field('hero_images') as $image)
 					<div>
-						<img class="square w-100 h-100"
-						     src="{{$image}}"
-						     alt=""
-						     style="object-fit: cover; object-position: center; min-height:500px"
-						/>
+						{!! wp_get_attachment_image( $image, 'full', false,['class'=> 'square w-100 h-100', 'style' => 'object-fit: cover; object-position: center; min-height:500px']) !!}
 					</div>
 				@endforeach
 
@@ -59,9 +55,8 @@
 					@if($uspsCount % 2 == 1)
 						<div class="row {{$uspsCount % 2 == 0 ? "mb-default" : null}}">
 							@endif
-							<div class="usps-item col-12 col-md-6 d-flex align-items-center">
-								<img loading="lazy" src="{{$usp['usp_icon']}}" alt=""
-								     style="width:20px; height:20px;" class="square"/>
+							<div class="usps-item col-12 col-md-6 d-flex align-items-center {{$uspsCount % 2 != 0 ? "mb-default  mb-default-md" : null}}">
+								{!! wp_get_attachment_image( $usp['usp_icon'], 'full', true,['class'=> 'square']) !!}
 								<p class="ml-default {{get_field('usps_bg_color') == 'bg-primary' ? 'text-light' :null}}">{{$usp['usp_text']}}</p>
 							</div>
 							@if($uspsCount % 2 == 0)
@@ -89,10 +84,7 @@
 						<div class="mb-default mb-default-md">
 							<div class="p-default text-center service">
 							<span class="service_container mx-auto border_image mb-default {{get_field('border_color') ? the_field('border_color') : $bgColors[rand(0, count($bgColors)-1)] }}">
-								<img loading="lazy"
-								     class="service_img"
-								     src="{{the_field('image')}}"
-								     alt=""/>
+								{!! wp_get_attachment_image( get_field('image'), 'full', true,['class'=> 'service_img']) !!}
 							</span>
 
 								<h4 class="service_name mb-default">
@@ -123,10 +115,7 @@
 						<div class="mb-default mb-default-md">
 							<div class="p-default text-center service">
 							<span class="service_container mx-auto border_image mb-default {{get_field('border_color', $id) ? the_field('border_color', $id) : $bgColors[rand(0, count($bgColors)-1)] }}">
-								<img loading="lazy"
-								     class="service_img"
-								     src="{{the_field('image', $id)}}"
-								     alt=""/>
+								{!! wp_get_attachment_image( get_field('image', $id), 'full', true,['class'=> 'service_img']) !!}
 							</span>
 
 								<h4 class="service_name mb-default">
@@ -210,10 +199,8 @@
 			@if(get_field('app_gallery'))
 				<div id="appCarousel">
 					@foreach(get_field('app_gallery') as $appImage)
-						<div class="">
-							<img loading="lazy" class="w-100 h-100"
-							     src="{{$appImage}}"
-							     alt=""/>
+						<div>
+							{!! wp_get_attachment_image( $appImage, 'full', false,['class'=> 'w-100 h-100']) !!}
 						</div>
 					@endforeach
 
@@ -240,11 +227,9 @@
 					@foreach(get_field('clients') as $client)
 						<div>
 							<div class="card h-100 border-0 p-default text-center client">
-													<span class="client_container mx-auto border_image mb-default {{$client['border_color'] ? $client['border_color'] : $bgColors[rand(0, count($bgColors)-1)] }}">
-														<img loading="lazy" class="client_img"
-														     src="{{$client['client_image']}}"
-														     alt=""/>
-													</span>
+								<span class="client_container mx-auto border_image mb-default {{$client['border_color'] ? $client['border_color'] : $bgColors[rand(0, count($bgColors)-1)] }}">
+									{!! wp_get_attachment_image( $client['client_image'], 'full', false,['class'=> 'client_img']) !!}
+								</span>
 
 								<h4 class="client_quote mb-default">"{{$client['client_quote']}}"</h4>
 
@@ -287,8 +272,7 @@
 									<div class="mb-default mb-default-md">
 										<div class="card border-0 {{$posts->found_posts != 1 ? 'mb-default' : null}} position-relative h-100">
 											<a href="{{ the_permalink() }}" class="d-block post_link h-100">
-												<img loading="lazy" src="{{the_field('headerimage')}}" alt=""
-												     class="w-100 post_image h-100">
+												{!! wp_get_attachment_image( get_field('headerimage'), 'full', false,['class'=> 'w-100 post_image h-100']) !!}
 											</a>
 											<a href="{{ the_permalink() }}">
 												<div class="post_content position-absolute bg-white w-100 fixed-bottom p-default squircles">
@@ -320,9 +304,7 @@
 											<div class="card border-0 {{$loop->count != 1 ? 'mb-default' : null}} position-relative h-100">
 												<a href="{{ get_the_permalink($postId) }}"
 												   class="d-block post_link h-100">
-													<img loading="lazy" src="{{the_field('headerimage', $postId)}}"
-													     alt=""
-													     class="w-100 post_image h-100">
+													{!! wp_get_attachment_image( get_field('headerimage', $postId), 'full', false,['class'=> 'w-100 post_image h-100']) !!}
 												</a>
 												<div class="post_content position-absolute bg-white w-100 fixed-bottom p-default squircles">
 													<p class="date text-muted">

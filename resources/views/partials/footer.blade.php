@@ -5,8 +5,7 @@
 				@php($images = get_field('partners', 'option'))
 				@php($count = 0)
 				@foreach($images as $image)
-					<img loading="lazy" class="square" src="{{$image['url']}}"
-					     alt="{{$image['alt']}}">
+					{!! wp_get_attachment_image( $image, 'full', false,['class'=> 'square'] ) !!}
 				@endforeach
 			</div>
 		</div>
@@ -34,8 +33,8 @@
 					@if (have_rows('social','option'))
 						<div class="socials col-12 order-0 d-flex d-sm-block justify-content-center">
 							@while(have_rows('social','option')) @php(the_row())
-							<a class="socials_link" target="_blank" href="{{the_sub_field('url')}}">
-								<img loading="lazy" class="socials_img square" src="{{the_sub_field('image')}}" alt="">
+							<a class="socials_link" href="{{the_sub_field('url')}}">
+								{!! wp_get_attachment_image( get_sub_field('image'), 'full', true,['class'=> 'socials_img square'] ) !!}
 							</a>
 							@endwhile
 						</div>
@@ -44,7 +43,7 @@
 
 				<div class="logo_container d-flex justify-content-center col-12 col-md-4 order-first order-md-0">
 					@if(get_field('logo_image', 'option'))
-						<img loading="lazy" class="logo" src="{{the_field('logo_image', 'option')}}">
+						{!! wp_get_attachment_image( get_field('logo_image','option'), 'full', true,['class'=> 'logo'] ) !!}
 					@else
 						<img loading="lazy" class="logo" src="@asset('images/logo.png')">
 					@endif

@@ -24,10 +24,8 @@
 						<div>
 							<div class="card text-center team_member h-100">
 								<span class="member_image mx-auto border_image {{$member['border_color'] != "" ? $member['border_color'] : $bgColors[rand(0, count($bgColors) - 1)] }}">
-								<img loading="lazy" class="member_image_img"
-								     src="{{$member['image']}}"
-								     alt="">
-							</span>
+									{!! wp_get_attachment_image($member['image'], 'full', false,['class'=> 'member_image_img'] ) !!}
+								</span>
 
 								<h4 class="member_name">{{$member['name']}}</h4>
 
