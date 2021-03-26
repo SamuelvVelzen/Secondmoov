@@ -29,8 +29,7 @@
 					</div>
 				</div>
 				<div class="image col-12 col-md-5 {{$i % 2 == 1 ?'':'offset-md-1'}}">
-					<img src="{{the_field('image')}}"
-					     alt="" class="w-100">
+					{!! wp_get_attachment_image( get_field('image'), 'full', false,['class'=> 'h-auto w-100'] ) !!}
 				</div>
 			</div>
 			@endwhile

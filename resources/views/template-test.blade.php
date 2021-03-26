@@ -5,16 +5,30 @@
 @extends('layouts.app')
 
 @section('content')
-	@php($img = get_field('test'))
-	<pre>
+	@php
+		$img = get_field('test');
+		$srcset = "";
+	@endphp
 
-	{{var_dump($img)}}
+	@foreach ($img['sizes'] as $key=>$data)
+		@if(str_contains($key,'height') !== false || str_contains($key,'width') !== false)
+		@else
+			@php($srcset .= "{$data} {$img['sizes'][$key. '-width']}w, ")
+		@endif
+	@endforeach
+	<pre>
+			{{var_dump($img)}}
 	</pre>
 
+	{!! wp_get_attachment_image( $img['id'], 'full', false,['class'=> 'hoi nee fake'] ) !!}
+
 	<img
-			src="{{$img['url']}}}"
-			srcset="{{$img['sizes']['thumbnail']}} 10w, three.png 500w, four.png 1000w"
+			src="{{$img['url']}}"
 			alt="{{$img['description']}}"
 			title="{{$img['caption']}}"
+			height="{{$img['height']}}"
+			width="{{$img['width']}}"
+			srcset="{{$srcset}}"
+			sizes="(max-width:{{$img['width']}}px) 100vw, {{$img['width']}}px"
 	/>
 @endsection

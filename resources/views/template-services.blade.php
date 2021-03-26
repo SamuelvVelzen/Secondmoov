@@ -23,11 +23,9 @@
 			@while($query->have_posts()) @php($query->the_post())
 			<div class="row pb-default-2">
 				<div class="service_image col-12 col-md-4 justify-content-center d-flex icon-img">
-						<span class="border_image {{get_field('border_color') ? the_field('border_color') : $bgColors[rand(0, count($bgColors) - 1)] }}">
-						<img class="service_img"
-						     src="{{the_field('image')}}"
-						     alt="">
-							</span>
+					<span class="border_image {{get_field('border_color') ? the_field('border_color') : $bgColors[rand(0, count($bgColors) - 1)] }}">
+						{!! wp_get_attachment_image( get_field('image'), 'full', true,['class'=> 'service_img'] ) !!}
+					</span>
 				</div>
 				<div class="service_text col-12 col-md-8 d-flex align-items-center flex-wrap">
 					<div class="col-12">

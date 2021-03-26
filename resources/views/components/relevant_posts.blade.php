@@ -18,8 +18,7 @@
 					<div class="post col-12 col-md-5 {{ $i % 2 === 0 ? 'offset-md-2' : '' }}">
 						<div class="position-relative">
 							<a href="{{ get_the_permalink($postId) }}" class="d-block post_link h-100">
-								<img src="{{the_field('headerimage', $postId)}}" alt=""
-								     class="w-100">
+								{!! wp_get_attachment_image( get_field('headerimage', $postId), 'full', false,['class'=> 'w-100 h-auto'] ) !!}
 							</a>
 							<a href="{{ get_the_permalink($postId) }}">
 								<div class="content position-absolute">
@@ -38,8 +37,7 @@
 				<div class="post col-12 col-md-5">
 					<div class="position-relative">
 						<a href="{{ get_the_permalink($postId) }}" class="d-block post_link h-100">
-							<img src="{{the_field('headerimage', $postId)}}" alt=""
-							     class="w-100">
+							{!! wp_get_attachment_image( get_field('headerimage', $postId), 'full', false,['class'=> 'w-100 h-auto'] ) !!}
 						</a>
 						<a href="{{ get_the_permalink($postId) }}">
 							<div class="content position-absolute">
@@ -62,7 +60,7 @@
 						<div class="post col-12 col-md-5 offset-md-2">
 							<div class="position-relative">
 								<a href="{{ the_permalink() }}" class="d-block">
-									<img src="{{the_field('headerimage')}}" alt="" class="w-100">
+									{!! wp_get_attachment_image( get_field('headerimage'), 'full', false,['class'=> 'w-100 h-auto'] ) !!}
 								</a>
 								<a href="{{ the_permalink() }}">
 									<div class="content position-absolute">
@@ -91,7 +89,7 @@
 				<div class="post col-12 col-md-5 {{ $i % 2 === 0 ? 'offset-md-2' : '' }}">
 					<div class="position-relative">
 						<a href="{{ the_permalink() }}" class="d-block">
-							<img src="{{the_field('headerimage')}}" alt="" class="w-100">
+							{!! wp_get_attachment_image( get_field('headerimage'), 'full', false,['class'=> 'w-100 h-auto'] ) !!}
 						</a>
 						<a href="{{ the_permalink() }}">
 							<div class="content position-absolute">
